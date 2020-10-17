@@ -7,11 +7,16 @@
         <title>C.house</title>
         <link rel="stylesheet" href="<c:url value='/css/reset.css' />">
         <link rel="stylesheet" href="<c:url value='/css/style.css' />">
+        <script src="https://kit.fontawesome.com/b24292ab52.js" crossorigin="anonymous"></script>
     </head>
     <body>
         <header>
-            <h1>C.house</h1>
+            <div class="header-left">
+                <h1>C.house</h1>
+                <p>~オンライン授業サポートアプリ~</p>
+            </div>
         </header>
+        
         <div id="content">
             ${param.content}
         </div>
