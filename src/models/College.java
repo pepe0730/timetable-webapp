@@ -28,8 +28,11 @@ import javax.persistence.Table;
     @NamedQuery(
             name = "checkRegisteredCollege",
             query = "SELECT COUNT(c) FROM College AS c WHERE c.name = :name AND c.undergraduate_name = :undergraduate_name AND c.department_name = :department_name"
+            ),
+    @NamedQuery(
+            name = "getPersonCollege",
+            query = "SELECT c FROM College AS c WHERE c.code = :code"
             )
-
 })
 @Entity
 public class College {

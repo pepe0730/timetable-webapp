@@ -5,16 +5,21 @@
     <c:param name="content">
         <div class="main">
             <div class="container">
-                <h2>管理者 新規作成</h2>
+                <div class="heading-wrapper">
+                    <h2><i class="fas fa-users-cog"></i>新規管理者登録</h2>
+                </div>
                 <c:if test="${errors != null}">
                     <div id="flush_error">
-                            入力内容にエラーがあります <br />
-                        <c:forEach var="error" items="${errors}">
-                            <c:out value="${error}" /><br />
-                        </c:forEach>
+                        <div class="error-content">
+                            <h3 class="font-weight-bold"><span class="mr-3 badge badge-danger">Error</span>入力内容にエラーがあります</h3>
+                            <c:forEach var="error" items="${errors}">
+                                <p><i class="fas fa-check mr-3"></i><c:out value="${error}" /></p>
+                            </c:forEach>
+                        </div>
                     </div>
                 </c:if>
-                <form method="POST" action="<c:url value='/people/create' />">
+                <form class="text-form" method="POST" action="<c:url value='/people/create' />">
+                    <h3>Admins create</h3>
                     <div class="form-group row">
                         <label class="col-2 col-form-label" for="name">氏名 :</label>
                         <div class="col-10">
