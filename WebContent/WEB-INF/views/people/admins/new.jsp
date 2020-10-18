@@ -33,7 +33,7 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-2 col-form-label" for="college_code">所属コード : </label>
+                        <label class="col-2 col-form-label" for="college_code">大学コード : </label>
                         <div class="col-10">
                             <input type="text" class="form-control" name="college_code" value="${person.college.code}" placeholder="管理職の場合は00000000">
                         </div>
@@ -44,6 +44,7 @@
                             <input type="password" class="form-control" name="password" />
                         </div>
                     </div>
+                    <input type="hidden" name="authority" value=2>
                     <input type="hidden" name="_token" value="${_token}">
                     <button class="btn btn-primary"type="submit">新規作成</button>
                 </form>
