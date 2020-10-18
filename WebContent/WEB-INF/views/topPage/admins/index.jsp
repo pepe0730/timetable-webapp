@@ -27,7 +27,7 @@
                                 <tr>
                                     <td><c:out value="${admin.code}" /></td>
                                     <td><c:out value="${admin.name}" /></td>
-                                    <td><a class="btn btn-info" href="<c:url value='/admins/show?id=${admin.id}' />">詳細</a>
+                                    <td><a class="btn btn-info" href="<c:url value='/people/show?id=${admin.id}' />">詳細</a>
                                     </td>
                                 </tr>
                             </c:forEach>
