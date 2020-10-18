@@ -4,8 +4,21 @@
     <c:param name="content">
         <div class="main">
             <div class="container">
-                <h2>大学情報の編集</h2>
-                <form method="POST" action="<c:url value='/colleges/update'/>">
+                <c:if test="${errors != null}">
+                    <div id="flush_error">
+                        <div class="error-content">
+                            <h3 class="font-weight-bold"><span class="mr-3 badge badge-danger">Error</span>入力内容にエラーがあります</h3>
+                            <c:forEach var="error" items="${errors}">
+                                <p><i class="fas fa-check mr-3"></i><c:out value="${error}" /></p>
+                            </c:forEach>
+                        </div>
+                    </div>
+                </c:if>
+                <div class="heading-wrapper">
+                    <h2><i class="fas fa-school"></i>大学情報の編集</h2>
+                </div>
+                <form class="text-form" method="POST" action="<c:url value='/colleges/update'/>">
+                    <h3 class="font-weight-bold">Update form</h3>
                     <c:import url="_form.jsp" />
                     <button class="btn btn-primary" type="submit">更新</button>
                 </form>

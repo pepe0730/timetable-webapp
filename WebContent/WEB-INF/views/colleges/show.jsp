@@ -5,44 +5,61 @@
     <c:param name="content">
         <div class="main">
             <div class="container">
-                <h2>
-                    <i class="fas fa-school"></i>大学詳細 コード
-                </h2>
+                <div class="heading-wrapper">
+                    <h2>
+                        <i class="fas fa-school"></i>大学詳細
+                    </h2>
+                </div>
                 <c:choose>
                     <c:when test="${college != null}">
-                        <div class="row">
-                            <div class="col-md-2">
-                                <p>大学名：</p>
+                        <div class="show-wrapper">
+                            <div class="data-wrapper">
+                                <h3>College data</h3>
+                                <div class="data-contents row">
+                                    <div class="data col-md-5">
+                                        <p>大学名：</p>
+                                    </div>
+                                    <div class="data col-md-6">
+                                        <c:out value="${college.name}" />
+                                    </div>
+                                    <div class="data col-md-5">
+                                        <p>学部名：</p>
+                                    </div>
+                                    <div class="data col-md-6">
+                                        <c:out value="${college.undergraduate_name}" />
+                                    </div>
+                                    <div class="data col-md-5">
+                                        <p>学科名：</p>
+                                    </div>
+                                    <div class="data col-md-6">
+                                        <c:out value="${college.department_name}" />
+                                    </div>
+                                    <div class="data col-md-5">
+                                        <p>コード：</p>
+                                    </div>
+                                    <div class="data col-md-6">
+                                        <c:out value="${college.code}" />
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col-md-10">
-                                <c:out value="${college.name}" />
-                            </div>
-                            <div class="col-md-2">
-                                <p>学部名：</p>
-                            </div>
-                            <div class="col-md-10">
-                                <c:out value="${college.undergraduate_name}" />
-                            </div>
-                            <div class="col-md-2">
-                                <p>学科名：</p>
-                            </div>
-                            <div class="col-md-10">
-                                <c:out value="${college.department_name}" />
-                            </div>
-                            <div class="col-md-2">
-                                <p>コード：</p>
-                            </div>
-                            <div class="col-md-10">
-                                <c:out value="${college.code}" />
+                            <div class="btn-wrapper show-btn-wrapper">
+                                <h3 class="font-weight-bold text-center">Action</h3>
+                                <form method="POST" action="<c:url value='/colleges/destroy' />">
+                                <a class="btn btn-info" href="<c:url value='/colleges/edit?id=${college.id}' />">大学情報の編集</a>
+                                    <input type="hidden" name="_token" value="${_token}">
+                                    <button class="btn btn-dark" type="submit">この大学を削除</button>
+                                </form>
                             </div>
                         </div>
-                        <div class="btn-wrapper">
-                            <a href="<c:url value='/colleges/edit?id=${college.id}' />">大学情報の編集</a>
-                            <form method="POST" action="<c:url value='/colleges/destroy' />">
-                                <input type="hidden" name="_token" value="${_token}">
-                                <button class="btn btn-success destroy-btn" type="submit">この大学を削除</button>
-                            </form>
-
+                        <div class="show-date-wrapper">
+                            <div class="date-data">
+                                <h3 class="font-weight-bold">作成日時</h3><span class="badge badge-success">Create</span>
+                                <p class="text-success"><c:out value="${college.created_at}" /></p>
+                            </div>
+                            <div class="date-data">
+                                <h3 class="font-weight-bold">更新日時</h3><span class="badge badge-danger">Update</span>
+                                <p class="text-danger"><c:out value="${college.updated_at}" /></p>
+                            </div>
                         </div>
                     </c:when>
                     <c:otherwise>
