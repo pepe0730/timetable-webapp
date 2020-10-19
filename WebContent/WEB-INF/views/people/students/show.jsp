@@ -6,17 +6,17 @@
             <div class="container">
                 <div class="heading-wrapper">
                     <h2>
-                        <i class="fas fa-user-tie"></i>教授詳細
+                        <i class="fas fa-user-tie"></i>生徒詳細
                     </h2>
                 </div>
                 <c:choose>
                     <c:when test="${person != null}">
                         <div class="show-wrapper">
                             <div class="data-wrapper">
-                                <h3>Teacher data</h3>
+                                <h3>Student data</h3>
                                 <div class="data-contents row">
                                     <div class="data col-md-5">
-                                        <p>教授名：</p>
+                                        <p>生徒名：</p>
                                     </div>
                                     <div class="data col-md-6">
                                         <c:out value="${person.name}" />
@@ -56,10 +56,10 @@
                             <div class="btn-wrapper show-btn-wrapper">
                                 <h3 class="font-weight-bold text-center">Action</h3>
                                 <form method="POST" action="<c:url value='/people/destroy' />">
-                                    <a class="btn btn-info" href="<c:url value='/people/edit?id=${person.id}&authority=1' />">教授情報の編集</a>
+                                    <a class="btn btn-info" href="<c:url value='/people/edit?id=${person.id}&authority=0' />">生徒情報の編集</a>
                                     <input type="hidden" name="_token" value="${_token}">
-                                    <input type="hidden" name="authority" value=1>
-                                    <button class="btn btn-dark" type="submit">この教授を削除</button>
+                                    <input type="hidden" name="authority" value=0>
+                                    <button class="btn btn-dark" type="submit">この生徒を削除</button>
                                 </form>
                             </div>
                         </div>
@@ -75,7 +75,7 @@
                         </div>
                     </c:when>
                     <c:otherwise>
-                        <h3>お探しの教授情報は見つかりませんでした。</h3>
+                        <h3>お探しの生徒情報は見つかりませんでした。</h3>
                     </c:otherwise>
                 </c:choose>
             </div>

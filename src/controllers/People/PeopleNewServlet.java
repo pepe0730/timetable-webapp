@@ -38,12 +38,12 @@ public class PeopleNewServlet extends HttpServlet {
 
         Integer authority = Integer.parseInt(request.getParameter("authority"));
 
-        RequestDispatcher rd;
+        RequestDispatcher rd = null;;
         if (authority == 2) {
             rd = request.getRequestDispatcher("/WEB-INF/views/people/admins/new.jsp");
         } else if(authority == 1) {
             rd = request.getRequestDispatcher("/WEB-INF/views/people/teachers/new.jsp");
-        } else {
+        } else if(authority == 0){
             rd = request.getRequestDispatcher("/WEB-INF/views/people/students/new.jsp");
         }
         rd.forward(request, response);

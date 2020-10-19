@@ -32,7 +32,7 @@
             <li><a href="#">プロフィール</a></li>
             <li><a href="<c:url value='/colleges/index '/>">大学情報</a></li>
             <li><a href="<c:url value='/people/teachers/index '/>">教授情報</a></li>
-            <li><a href="#">生徒情報</a></li>
+            <li><a href="<c:url value='/people/students/index '/>">生徒情報</a></li>
             <li><a href="<c:url value='/admins/index.html' /> ">管理者情報</a>
         </ul>
     </nav>
