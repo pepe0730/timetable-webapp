@@ -40,9 +40,17 @@ public class PeopleEditServlet extends HttpServlet {
         request.getSession().setAttribute("_token", request.getSession().getId());
         request.setAttribute("person", p);
 
-        RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/people/admins/edit.jsp");
-        rd.forward(request, response);
+        Integer authority = Integer.parseInt(request.getParameter("authority"));
 
+        RequestDispatcher rd;
+        if (authority == 2) {
+            rd = request.getRequestDispatcher("/WEB-INF/views/people/admins/edit.jsp");
+        } else if(authority == 1) {
+            rd = request.getRequestDispatcher("/WEB-INF/views/people/teachers/edit.jsp");
+        } else {
+            rd = request.getRequestDispatcher("/WEB-INF/views/people/students/edit.jsp");
+        }
+        rd.forward(request, response);
     }
 
 }

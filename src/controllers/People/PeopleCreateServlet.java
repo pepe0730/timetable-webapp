@@ -50,7 +50,8 @@ public class PeopleCreateServlet extends HttpServlet {
                             (String)this.getServletContext().getAttribute("pepper")
                     )
             );
-            p.setAuthority(Integer.parseInt(request.getParameter("authority")));
+            Integer authority = Integer.parseInt(request.getParameter("authority"));
+            p.setAuthority(authority);
 
             Timestamp currentTime = new Timestamp(System.currentTimeMillis());
             p.setCreated_at(currentTime);
@@ -79,9 +80,19 @@ public class PeopleCreateServlet extends HttpServlet {
                 request.getSession().setAttribute("_token", request.getSession().getId());
                 request.setAttribute("errors", errors);
                 request.setAttribute("person", p);
-                //ログイン中のユーザーが管理者なら/admins/new.jspへ 教授なら/teachers/new.jspへ飛ばす
-                RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/people/admins/new.jsp");
-                rd.forward(request, response);
+                //hiddenで送られてきたauthorityの値で決める。
+
+                if (authority == 2) {
+                    RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/people/admins/new.jsp");
+                    rd.forward(request, response);
+                } else if (authority == 1) {
+                    RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/people/teachers/new.jsp");
+                    rd.forward(request, response);
+                } else {
+                    RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/people/students/new.jsp");
+                    rd.forward(request, response);
+                }
+
             } else {
                 em.getTransaction().begin();
                 em.persist(p);
@@ -89,7 +100,14 @@ public class PeopleCreateServlet extends HttpServlet {
                 request.getSession().setAttribute("flush", "登録が完了しました。");
                 em.close();
 
-                response.sendRedirect(request.getContextPath() + "/admins/index.html");
+                if (authority == 2) {
+                    response.sendRedirect(request.getContextPath() + "/admins/index.html");
+                } else if (authority == 1) {
+                    response.sendRedirect(request.getContextPath() + "/people/teachers/index");
+                } else {
+                    response.sendRedirect(request.getContextPath() + "/people/students/index");
+                }
+
 
             }
 

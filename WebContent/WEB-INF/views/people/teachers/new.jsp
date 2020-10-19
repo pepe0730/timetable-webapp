@@ -5,7 +5,7 @@
         <div class="main">
             <div class="container">
                 <div class="heading-wrapper">
-                    <h2><i class="fas fa-users-cog"></i>新規管理者登録</h2>
+                    <h2><i class="fas fa-user-tie"></i>新規教授登録</h2>
                 </div>
                 <c:if test="${errors != null}">
                     <div id="flush_error">
@@ -18,7 +18,7 @@
                     </div>
                 </c:if>
                 <form class="text-form" method="POST" action="<c:url value='/people/create' />">
-                    <h3 class="font-weight-bold">Admins create</h3>
+                    <h3 class="font-weight-bold">Teachers create</h3>
                     <div class="form-group row">
                         <label class="col-2 col-form-label" for="name">氏名 :</label>
                         <div class="col-10">
@@ -34,7 +34,7 @@
                     <div class="form-group row">
                         <label class="col-2 col-form-label" for="college_code">大学コード : </label>
                         <div class="col-10">
-                            <input type="text" class="form-control" name="college_code" value="${person.college.code}" placeholder="管理職の場合は00000000">
+                            <input type="text" class="form-control" name="college_code" value="${person.college.code}" placeholder="8桁で入力してください">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -43,7 +43,7 @@
                             <input type="password" class="form-control" name="password" />
                         </div>
                     </div>
-                    <input type="hidden" name="authority" value=2>
+                    <input type="hidden" name="authority" value=1>
                     <input type="hidden" name="_token" value="${_token}">
                     <button class="btn btn-primary"type="submit">新規作成</button>
                 </form>

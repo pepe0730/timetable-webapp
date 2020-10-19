@@ -40,8 +40,17 @@ public class PeopleShowServlet extends HttpServlet {
         request.setAttribute("person", p);
         request.getSession().setAttribute("person_id", p.getId());
 
-        //ログインユーザの権限によってページを分岐
-        RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/people/admins/show.jsp");
+
+        //authorityによって分岐
+        Integer authority = Integer.parseInt(request.getParameter("authority"));
+        RequestDispatcher rd;
+        if (authority == 2) {
+            rd = request.getRequestDispatcher("/WEB-INF/views/people/admins/show.jsp");
+        } else if(authority == 1) {
+            rd = request.getRequestDispatcher("/WEB-INF/views/people/teachers/show.jsp");
+        } else {
+            rd = request.getRequestDispatcher("/WEB-INF/views/people/students/show.jsp");
+        }
         rd.forward(request, response);
     }
 

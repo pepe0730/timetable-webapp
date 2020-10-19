@@ -42,7 +42,15 @@ public class PeopleDestroyServlet extends HttpServlet {
             em.close();
 
             request.getSession().setAttribute("flush","削除しました");
-            response.sendRedirect(request.getContextPath() + "/admins/index.html");
+
+            Integer authority = Integer.parseInt(request.getParameter("authority"));
+            if (authority == 2) {
+                response.sendRedirect(request.getContextPath() + "/admins/index.html");
+            } else if (authority == 1) {
+                response.sendRedirect(request.getContextPath() + "/people/teachers/index");
+            } else {
+                response.sendRedirect(request.getContextPath() + "/people/students/index");
+            }
         }
     }
 

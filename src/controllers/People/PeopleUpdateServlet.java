@@ -86,14 +86,24 @@ public class PeopleUpdateServlet extends HttpServlet {
                 }
             }
 
+            Integer authority = Integer.parseInt(request.getParameter("authority"));
             if (errors.size() > 0) {
                 em.close();
                 request.setAttribute("_token", request.getSession().getId());
                 request.setAttribute("person", p);
                 request.setAttribute("errors", errors);
 
-                RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/people/admins/edit.jsp");
-                rd.forward(request, response);
+                if (authority == 2) {
+                    RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/people/admins/edit.jsp");
+                    rd.forward(request, response);
+                } else if (authority == 1) {
+                    RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/people/teachers/edit.jsp");
+                    rd.forward(request, response);
+                } else {
+                    RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/people/students/edit.jsp");
+                    rd.forward(request, response);
+                }
+
             } else {
                 em.getTransaction().begin();
                 em.getTransaction().commit();
@@ -101,8 +111,13 @@ public class PeopleUpdateServlet extends HttpServlet {
 
                 request.getSession().setAttribute("flush", "更新しました");
 
-                request.getSession().removeAttribute("person_id");
-                response.sendRedirect(request.getContextPath() + "/admins/index.html");
+                if (authority == 2) {
+                    response.sendRedirect(request.getContextPath() + "/admins/index.html");
+                } else if (authority == 1) {
+                    response.sendRedirect(request.getContextPath() + "/people/teachers/index");
+                } else {
+                    response.sendRedirect(request.getContextPath() + "/people/students/index");
+                }
             }
 
 

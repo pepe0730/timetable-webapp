@@ -62,7 +62,8 @@ public class CollegesUpdateServlet extends HttpServlet {
             }
 
             List<String> errors = CollegeValidator.validate(c, code_duplicate_check_flag, college_duplicate_check_flag);
-
+            
+            
             if (errors.size() != 0) {
                 em.close();
                 request.getSession().setAttribute("_token", request.getSession().getId());

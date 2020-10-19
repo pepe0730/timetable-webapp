@@ -73,7 +73,6 @@ public class PersonValidator {
         if (college_code == null || college_code.equals("")) {
             return "大学コードを入力してください";
         }
-
         return "";
     }
 
