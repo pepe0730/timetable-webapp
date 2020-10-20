@@ -29,7 +29,7 @@
             </a>
         </h1>
         <ul>
-            <li><a href="#">プロフィール</a></li>
+            <li><a href="<c:url value='/profile/admins '/>">プロフィール</a></li>
             <li><a href="<c:url value='/colleges/index '/>">大学情報</a></li>
             <li><a href="<c:url value='/people/teachers/index '/>">教授情報</a></li>
             <li><a href="<c:url value='/people/students/index '/>">生徒情報</a></li>
@@ -42,6 +42,7 @@
                 <p>~オンライン授業サポートアプリ~</p>
             </div>
             <div class="header-right">
+                <p class="d-inline-block">${login_person.name}さん</p>
                 <a href="<c:url value='/logout' />">Logout</a>
             </div>
         </header>

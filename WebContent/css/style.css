@@ -85,10 +85,14 @@ header .header-left h1 a img {
     margin-right: 10px;
 }
 
+header .header-right {
+    display: inline-block;
+}
+
 header .header-right a {
-    display: block;
+    display: inline-block;
     line-height: 70px;
-    margin-right: 60px;
+    margin: 0 60px;
     opacity: 0.5;
     transition: all 0.5;
 }
@@ -421,6 +425,18 @@ footer {
     color :white;
     background-color: rgba(0,204,106,1);
     box-shadow: 0 1rem 2rem 0 rgba(53,64,82,.1);
+}
+
+
+/*==============
+ person profile
+ ==============*/
+
+
+
+ .show-btn-wrapper .profile-btn {
+     margin: 60px auto;
+
 }
 
 

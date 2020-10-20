@@ -43,6 +43,8 @@ public class ToppageAdminsIndexServlet extends HttpServlet {
             page = Integer.parseInt(request.getParameter("page"));
         } catch(NumberFormatException e){ }
 
+        Person login_person = (Person)request.getSession().getAttribute("login_person");
+
 
         List<Person> admins = em.createNamedQuery("getAllAdmins", Person.class)
                                     .setFirstResult(30 * (page -1))
@@ -55,6 +57,7 @@ public class ToppageAdminsIndexServlet extends HttpServlet {
         request.setAttribute("page", page);
         request.setAttribute("admins", admins);
         request.setAttribute("admins_count", admins_count);
+        request.setAttribute("login_person", login_person);
 
         if (request.getSession().getAttribute("flush") != null) {
             request.setAttribute("flush", request.getSession().getAttribute("flush"));
