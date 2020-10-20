@@ -21,7 +21,7 @@ import javax.persistence.Table;
             ),
     @NamedQuery(
             name = "checkLoginCodeAndPassword",
-            query = "SELECT p FROM Person AS p WHERE p.code = :code AND p.password = :pass"
+            query = "SELECT p FROM Person AS p WHERE p.code = :code AND p.college.code = :college_code AND p.password = :pass"
             ),
     @NamedQuery(
             name = "getAllAdmins",

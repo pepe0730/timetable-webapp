@@ -41,6 +41,9 @@
             <div class="header-left">
                 <p>~オンライン授業サポートアプリ~</p>
             </div>
+            <div class="header-right">
+                <a href="<c:url value='/logout' />">Logout</a>
+            </div>
         </header>
         <div id="content">${param.content}</div>
         <footer> by Shun Kambayashi. </footer>
