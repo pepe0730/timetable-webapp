@@ -6,7 +6,7 @@
             <div class="container">
                 <div class="heading-wrapper">
                     <h2>
-                        <i class="fas fa-school"></i>プロフィール
+                        <i class="far fa-id-card"></i>プロフィール
                     </h2>
                 </div>
                 <c:choose>

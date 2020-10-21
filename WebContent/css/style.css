@@ -241,6 +241,10 @@ form .btn {
     padding: 0;
 }
 
+/*================
+  person show.jsp
+=================*/
+
 .show-wrapper {
     display: flex;
     justify-content: space-between;
@@ -337,7 +341,7 @@ footer {
 }
 
 /*================
-      login.jsp
+    login.jsp
 ================*/
 
 .login {
@@ -347,8 +351,6 @@ footer {
 .login-form-wrapper {
     width: 60%;
     margin: 70px auto;
-
-
 }
 
 .login-form-wrapper span {
@@ -427,16 +429,39 @@ footer {
     box-shadow: 0 1rem 2rem 0 rgba(53,64,82,.1);
 }
 
-
 /*==============
  person profile
  ==============*/
-
-
-
  .show-btn-wrapper .profile-btn {
      margin: 60px auto;
+}
 
+/*===============
+ timetable layout
+ ===============*/
+
+ .timetable {
+    background-color: white;
+}
+
+.timetable tbody tr {
+    width: 80px;
+}
+
+.timetable tbody tr td {
+    height: 100px;
+}
+
+.timetable tbody tr th {
+    width: 50px;
+    background-color:rgba(51,3,0,0.3);
+    color: white;
+    font-size: 12px;
+}
+
+.timetable thead {
+    color: white;
+    background-color:rgba(51,3,0,0.3);
 }
 
 

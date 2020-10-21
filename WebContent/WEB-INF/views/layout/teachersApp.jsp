@@ -23,16 +23,15 @@
 <body class="row">
     <nav class="sidebar col-2">
         <h1>
-            <a class="text-primary" href="<c:url value='/students/index.html' />">
+            <a class="text-primary" href="<c:url value='/teachers/index.html' />">
                 <img src="<c:url value='/img/icon_111060_256.png' />">
                 C.house
             </a>
         </h1>
         <ul>
-            <li><a href="<c:url value='/profile/students '/>">プロフィール</a></li>
-            <li><a href="#">履修登録</a></li>
-            <li><a href="<c:url value='/people/teachers/index '/>">教授情報</a></li>
-
+            <li><a href="<c:url value='/profile/teachers '/>">プロフィール</a></li>
+            <li><a href="#">履修管理</a></li>
+            <li><a href="<c:url value='/people/students/index '/>">生徒情報</a></li>
         </ul>
     </nav>
     <main class="col-10" style="padding: 0;">
