@@ -1,4 +1,4 @@
-package controllers.People;
+package controllers.people;
 
 import java.io.IOException;
 import java.util.List;

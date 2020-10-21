@@ -9,9 +9,21 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Table (name = "subject")
+@NamedQueries({
+    @NamedQuery(
+            name = "getAllCollegeSubject",
+            query = "SELECT s FROM Subject AS s WHERE SUBSTRING(s.college.code,1,4) = SUBSTRING(:college_code,1,4) ORDER BY s.id DESC"
+            ),
+    @NamedQuery(
+            name = "getAllCollegeSubjectCount",
+            query = "SELECT COUNT(s) FROM Subject AS s WHERE SUBSTRING(s.college.code,1,4) = SUBSTRING(:college_code,1,4)"
+            )
+})
 @Entity
 public class Subject {
 

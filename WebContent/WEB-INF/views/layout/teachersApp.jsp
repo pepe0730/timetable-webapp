@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="ja">
@@ -30,7 +29,7 @@
         </h1>
         <ul>
             <li><a href="<c:url value='/profile/teachers '/>">プロフィール</a></li>
-            <li><a href="#">履修管理</a></li>
+            <li><a href="<c:url value='/subjects/index '/>">講義一覧・作成</a></li>
             <li><a href="<c:url value='/people/students/index '/>">生徒情報</a></li>
         </ul>
     </nav>
