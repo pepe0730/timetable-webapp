@@ -2,6 +2,14 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <div class="form-group row">
+    <label class="col-2 col-form-label" for="code">講義名 :</label>
+    <div class="col-8">
+        <input type="text" class="form-control" name="name"
+            value="${subject.name}">
+    </div>
+</div>
+
+<div class="form-group row">
     <label class="col-2 col-form-label" for="code">講義コード :</label>
     <div class="col-8">
         <input type="text" class="form-control" name="code"
@@ -10,19 +18,21 @@
 </div>
 
 <div class="form-group row">
-    <label class="col-2 col-form-label" for="code">講義名 :</label>
-    <div class="col-8">
-        <input type="text" class="form-control" name="name"
-            value="${subject.name}">
-    </div>
-</div>
-<div class="form-group row">
     <label class="col-2 col-form-label" for="teacher_name">担当教授 :</label>
     <div class="col-8">
         <input type="text" class="form-control" name="teacher_name"
             value="${subject.teacher.name}">
     </div>
 </div>
+
+<div class="form-group row">
+    <label class="col-2 col-form-label" for="teacher_code">教授コード :</label>
+    <div class="col-8">
+        <input type="text" class="form-control" name="teacher_code"
+            value="${subject.teacher.code}">
+    </div>
+</div>
+
 <div class="form-group row">
     <label class="col-2 col-form-label" for="college_code">大学コード :
     </label>
@@ -31,7 +41,6 @@
             value="${subject.college.code}">
     </div>
 </div>
-
 
 <div class="form-group row">
     <label class="col-2 col-form-label" for="color">カラー : </label>
