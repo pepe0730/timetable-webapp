@@ -49,7 +49,7 @@ public class SubjectsUpdateServlet extends HttpServlet {
 
             Boolean subject_duplicate_check_flag = false;
             String code = request.getParameter("code");
-            if (!name.equals(s.getCode())) {
+            if (!code.equals(s.getCode())) {
                 s.setCode(code);
                 subject_duplicate_check_flag = true;
             }

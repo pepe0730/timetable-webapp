@@ -41,7 +41,7 @@ public class SubjectsDestroyServlet extends HttpServlet {
             em.getTransaction().commit();
             em.close();
 
-            request.getSession().setAttribute("flush", "講義を1件を削除しました。");
+            request.getSession().setAttribute("flush", "講義を1件削除しました。");
             request.getSession().removeAttribute("subject_id");
 
             response.sendRedirect(request.getContextPath() + "/subjects/index");
