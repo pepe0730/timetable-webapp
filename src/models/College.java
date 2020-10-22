@@ -30,7 +30,7 @@ import javax.persistence.Table;
             query = "SELECT COUNT(c) FROM College AS c WHERE c.name = :name AND c.undergraduate_name = :undergraduate_name AND c.department_name = :department_name"
             ),
     @NamedQuery(
-            name = "getPersonCollege",
+            name = "getCollege",
             query = "SELECT c FROM College AS c WHERE c.code = :code"
             )
 })

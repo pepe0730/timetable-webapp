@@ -22,6 +22,10 @@ import javax.persistence.Table;
     @NamedQuery(
             name = "getAllCollegeSubjectCount",
             query = "SELECT COUNT(s) FROM Subject AS s WHERE SUBSTRING(s.college.code,1,4) = SUBSTRING(:college_code,1,4)"
+            ),
+    @NamedQuery(
+            name = "checkRegisteredSubject",
+            query = "SELECT s FROM Subject AS s WHERE s.code = :code AND s.college.code = :college_code"
             )
 })
 @Entity

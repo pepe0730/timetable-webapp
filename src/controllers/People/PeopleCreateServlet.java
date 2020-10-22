@@ -63,7 +63,7 @@ public class PeopleCreateServlet extends HttpServlet {
               //入力されたコードに該当するcollegeを取得
                 College c = null;
                 try {
-                    c = em.createNamedQuery("getPersonCollege", College.class)
+                    c = em.createNamedQuery("getCollege", College.class)
                             .setParameter( "code", request.getParameter("college_code"))
                             .getSingleResult();
                 } catch (Exception e) {}

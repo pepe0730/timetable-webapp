@@ -56,6 +56,7 @@ public class PersonValidator {
             if (person_count > 0) {
                 return "このコードはすでに登録されています";
             }
+            em.close();
         }
         return "";
     }
@@ -75,6 +76,8 @@ public class PersonValidator {
         }
         return "";
     }
+
+
 
 
     private static String _validatePassword (String password, Boolean password_check_flag) {

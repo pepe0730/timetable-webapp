@@ -18,14 +18,6 @@
 </div>
 
 <div class="form-group row">
-    <label class="col-2 col-form-label" for="teacher_name">担当教授 :</label>
-    <div class="col-8">
-        <input type="text" class="form-control" name="teacher_name"
-            value="${subject.teacher.name}">
-    </div>
-</div>
-
-<div class="form-group row">
     <label class="col-2 col-form-label" for="teacher_code">教授コード :</label>
     <div class="col-8">
         <input type="text" class="form-control" name="teacher_code"
@@ -76,22 +68,33 @@
     <label class="col-2 col-form-label" for="time">開講時限 : </label>
     <div class="col-3">
         <select class="form-control" name="time">
-        <option value="monday">1限</option>
-        <option value="tuesday">2限</option>
-        <option value="wednesday">3限</option>
-        <option value="thursday">4限</option>
-        <option value="friday">5限</option>
-        <option value="saturday">6限</option>
-        <option value="saturday">7限</option>
-        <option value="saturday">8限</option>
+        <option value=1>1限</option>
+        <option value=2>2限</option>
+        <option value=3>3限</option>
+        <option value=4>4限</option>
+        <option value=5>5限</option>
+        <option value=6>6限</option>
+        <option value=7>7限</option>
+        <option value=8>8限</option>
         </select>
     </div>
 </div>
 
 <div class="form-group row">
-    <label class="col-2 col-form-label" for="description">講義説明: </label>
+    <label class="col-2 col-form-label" for="description">講義説明 : </label>
     <div class="col-10">
         <textarea class="form-control" rows="7" name="description" value="${subject.description}"></textarea>
+    </div>
+</div>
+
+<div class="form-group row">
+    <label class="col-2 col-form-label" for="open_flag">開講範囲 : </label>
+    <div class="col-5">
+        <select class="form-control" name="open_flag">
+        <option value=2>全学生</option>
+        <option value=1>該当学部の生徒のみ</option>
+        <option value=0>該当学科の生徒のみ</option>
+        </select>
     </div>
 </div>
 <input type="hidden" name="_token" value="${_token}">

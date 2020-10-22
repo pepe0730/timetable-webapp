@@ -47,6 +47,10 @@ import javax.persistence.Table;
             name = "getAllStudentCount",
             query = "SELECT COUNT(p) FROM Person AS p WHERE p.authority = 0"
             ),
+    @NamedQuery (
+            name = "getTeacher",
+            query = "SELECT p FROM Person AS p WHERE p.authority = 1 AND p.code = :teacher_code"
+            )
 
 })
 
