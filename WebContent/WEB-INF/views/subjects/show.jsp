@@ -65,7 +65,6 @@
                                 <form method="POST" action="<c:url value='/subjects/destroy' />">
                                     <a class="btn btn-info" href="<c:url value='/subjects/edit?id=${subject.id}' />">講義情報の編集</a>
                                     <input type="hidden" name="_token" value="${_token}">
-
                                     <button class="btn btn-dark" type="submit">この講義を削除</button>
                                 </form>
                             </div>
