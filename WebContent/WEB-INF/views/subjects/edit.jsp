@@ -17,7 +17,7 @@
                 <div class="heading-wrapper">
                     <h2><i class="fas fa-book"></i>講義編集 : ${subject.name}</h2>
                 </div>
-                 <form class="text-form" method="POST" action="<c:url value='/subjects/create' />">
+                 <form class="text-form" method="POST" action="<c:url value='/subjects/update' />">
                     <h3 class="font-weight-bold">Subject update</h3>
                     <c:import url="_form.jsp" />
                     <button class="btn btn-primary" type="submit">内容を更新</button>

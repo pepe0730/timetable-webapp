@@ -19,16 +19,16 @@ import models.validators.SubjectValidator;
 import utils.DButil;
 
 /**
- * Servlet implementation class SubjectsCreateServlet
+ * Servlet implementation class SubjectsUpdateServlet
  */
-@WebServlet("/subjects/create")
-public class SubjectsCreateServlet extends HttpServlet {
+@WebServlet("/subjects/update")
+public class SubjectsUpdateServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public SubjectsCreateServlet() {
+    public SubjectsUpdateServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -41,26 +41,47 @@ public class SubjectsCreateServlet extends HttpServlet {
 
         if (_token != null && _token.equals(request.getSession().getId())) {
             EntityManager em = DButil.createEntityManager();
-            Subject s = new Subject();
 
-            s.setCode(request.getParameter("code"));
-            s.setName(request.getParameter("name"));
-            s.setColor(request.getParameter("color"));
-            s.setDay_of_week(request.getParameter("day_of_week"));
-            s.setTime(Integer.parseInt(request.getParameter("time")));
-            s.setDescription(request.getParameter("description"));
-            s.setOpen_flag(Integer.parseInt(request.getParameter("open_flag")));
+            Subject s = em.find(Subject.class, (Integer)request.getSession().getAttribute("subject_id"));
 
-            Timestamp currentTime  = new Timestamp(System.currentTimeMillis());
-            s.setCreated_at(currentTime);
+            String name = request.getParameter("name");
+            s.setName(name);
+
+            Boolean subject_duplicate_check_flag = false;
+            String code = request.getParameter("code");
+            if (!name.equals(s.getCode())) {
+                s.setCode(code);
+                subject_duplicate_check_flag = true;
+            }
+
+            String teacher_code = request.getParameter("teacher_code");
+
+            String college_code = request.getParameter("college_code");
+            if (!college_code.equals(s.getCollege().getCode())) {
+                subject_duplicate_check_flag = true;
+            }
+
+            String color = request.getParameter("color");
+            s.setColor(color);
+
+            String day_of_week = request.getParameter("day_of_week");
+            s.setDay_of_week(day_of_week);
+
+            Integer time = Integer.parseInt(request.getParameter("time"));
+            s.setTime(time);
+
+            String description = request.getParameter("description");
+            s.setDescription(description);
+
+            Integer open_flag = Integer.parseInt(request.getParameter("open_flag"));
+            s.setOpen_flag(open_flag);
+
+            Timestamp currentTime = new Timestamp(System.currentTimeMillis());
             s.setUpdated_at(currentTime);
 
-            //バリデーションにこの値を渡し、必須入力のチェックのみ行う。
-            String teacher_code = request.getParameter("teacher_code");
-            String college_code = request.getParameter("college_code");
+            List<String> errors = SubjectValidator.validate(s, teacher_code, college_code, subject_duplicate_check_flag);
 
-            List<String> errors = SubjectValidator.validate(s, teacher_code, college_code, true);
-            if (!teacher_code.equals("")) {
+            if(!teacher_code.equals(s.getTeacher().getCode()) && !teacher_code.equals("")) {
                 Person p = null;
                 try {
                     p = em.createNamedQuery("getTeacher", Person.class)
@@ -75,7 +96,7 @@ public class SubjectsCreateServlet extends HttpServlet {
                 }
             }
 
-            if (!college_code.equals("")) {
+            if (!college_code.equals(s.getCollege().getCode()) && !college_code.equals("")) {
                 College c = null;
                 try {
                     c = em.createNamedQuery("getCollege", College.class)
@@ -88,7 +109,7 @@ public class SubjectsCreateServlet extends HttpServlet {
                 } else {
                     errors.add("このコードの大学は存在しません");
                 }
-                //ログイン中の教授のcollege_codeとフォームのcollege_codeの確認
+
                 Person login_teacher = (Person)request.getSession().getAttribute("login_person");
                 String t_c_st_code =  login_teacher.getCollege().getCode().substring(0, 4);
                 String c_st_code = college_code.substring(0, 4);
@@ -103,18 +124,21 @@ public class SubjectsCreateServlet extends HttpServlet {
                 request.setAttribute("errors", errors);
                 request.setAttribute("subject", s);
 
-                RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/subjects/new.jsp");
+                RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/subjects/edit.jsp");
                 rd.forward(request, response);
             } else {
                 em.getTransaction().begin();
-                em.persist(s);
                 em.getTransaction().commit();
-                request.getSession().setAttribute("flush", "登録が完了しました。");
+                request.getSession().setAttribute("flush", "更新が完了しました。");
                 em.close();
+
+                request.getSession().removeAttribute("subject_id");
 
                 response.sendRedirect(request.getContextPath() + "/subjects/index");
             }
+
         }
+
     }
 
 }
