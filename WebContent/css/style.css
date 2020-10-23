@@ -450,7 +450,15 @@ footer {
 
 .timetable tbody tr td {
     height: 100px;
+    text-align: center;
+
 }
+
+.timetable tbody tr td p {
+    width: 80px;
+    margin: 0 auto;
+}
+
 
 .timetable tbody tr th {
     width: 50px;
@@ -463,6 +471,16 @@ footer {
     color: white;
     background-color:rgba(51,3,0,0.3);
 }
+
+.timetable tbody .red {
+    background-color: rgba(245,49,49,0.3);
+}
+
+.timetable tbody .blue {
+    background-color: blue;
+}
+
+
 
 /*===============
  subjects show.jsp
@@ -490,6 +508,8 @@ footer {
     border-radius: 10px;
     box-shadow: 0 0 2rem 0 rgba(53,64,82,.1);
 }
+
+
 
 
 

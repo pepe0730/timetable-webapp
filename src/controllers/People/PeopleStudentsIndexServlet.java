@@ -53,9 +53,12 @@ public class PeopleStudentsIndexServlet extends HttpServlet {
 
         em.close();
 
+        Person p = (Person)request.getSession().getAttribute("login_person");
+
         request.setAttribute("page", page);
         request.setAttribute("students", students);
         request.setAttribute("students_count", students_count);
+        request.setAttribute("person", p);
 
         if(request.getSession().getAttribute("flush") != null) {
             request.setAttribute("flush", request.getSession().getAttribute("flush"));

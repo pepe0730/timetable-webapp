@@ -93,7 +93,7 @@
                                             <c:when test="${subject.day_of_week == 'friday'}">
                                                 <p>金曜日</p>
                                             </c:when>
-                                            <c:when test="${subject.day_of_week == 'saturday'}">
+                                            <c:when test="${subject.day_of_week == 'saturdy'}">
                                                 <p>土曜日</p>
                                             </c:when>
                                         </c:choose>

@@ -57,7 +57,9 @@ public class PeopleCreateServlet extends HttpServlet {
             p.setCreated_at(currentTime);
             p.setUpdated_at(currentTime);
 
-            List<String> errors = PersonValidator.validate(p, request.getParameter("college_code"), true, true);
+            String college_code = request.getParameter("college_code");
+
+            List<String> errors = PersonValidator.validate(p, college_code, true, true);
 
             if (!request.getParameter("college_code").equals("")) {
               //入力されたコードに該当するcollegeを取得
@@ -74,6 +76,8 @@ public class PeopleCreateServlet extends HttpServlet {
                     p.setCollege(c);
                 }
             }
+
+
 
             if (errors.size() > 0) {
                 em.close();

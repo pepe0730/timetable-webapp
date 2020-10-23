@@ -16,7 +16,7 @@ import javax.persistence.Table;
 @Table (name = "subject")
 @NamedQueries({
     @NamedQuery(
-            name = "getAllCollegeSubject",
+            name = "getAllCollegeSubjects",
             query = "SELECT s FROM Subject AS s WHERE SUBSTRING(s.college.code,1,4) = SUBSTRING(:college_code,1,4) ORDER BY s.id DESC"
             ),
     @NamedQuery(
@@ -26,6 +26,10 @@ import javax.persistence.Table;
     @NamedQuery(
             name = "checkRegisteredSubject",
             query = "SELECT s FROM Subject AS s WHERE s.code = :code AND s.college.code = :college_code"
+            ),
+    @NamedQuery(
+            name = "getAllMyClassSubjects",
+            query = "SELECT s FROM Subject AS s WHERE s.teacher.code = :teacher_code"
             )
 })
 @Entity

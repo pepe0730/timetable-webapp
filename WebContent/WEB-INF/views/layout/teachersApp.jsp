@@ -30,7 +30,7 @@
         <ul>
             <li><a href="<c:url value='/profile/teachers '/>">プロフィール</a></li>
             <li><a href="<c:url value='/subjects/index '/>">講義一覧・作成</a></li>
-            <li><a href="<c:url value='/people/students/index '/>">生徒情報</a></li>
+            <li><a href="<c:url value='/teachers/index.html'/>">講義スケジュール</a></li>
         </ul>
     </nav>
     <main class="col-10" style="padding: 0;">

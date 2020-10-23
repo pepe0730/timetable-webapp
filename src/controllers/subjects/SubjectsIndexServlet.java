@@ -45,7 +45,7 @@ public class SubjectsIndexServlet extends HttpServlet {
 
         List<Subject> subjects = null;
         try {
-            subjects = em.createNamedQuery("getAllCollegeSubject", Subject.class)
+            subjects = em.createNamedQuery("getAllCollegeSubjects", Subject.class)
                                    .setParameter("college_code", teacher.getCollege().getCode())
                                    .setFirstResult(30 * (page - 1))
                                    .setMaxResults(30)
