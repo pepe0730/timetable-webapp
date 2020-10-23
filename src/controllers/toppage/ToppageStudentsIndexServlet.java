@@ -33,7 +33,7 @@ public class ToppageStudentsIndexServlet extends HttpServlet {
         rd.forward(request, response);
 
 
-        response.getWriter().append("Served at: ").append(request.getContextPath());
+
     }
 
 }
