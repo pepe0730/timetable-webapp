@@ -1,4 +1,4 @@
-package controllers.registerdSubjects;
+package controllers.profile;
 
 import java.io.IOException;
 
@@ -10,20 +10,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import models.Subject;
+import models.Person;
 import utils.DButil;
 
 /**
- * Servlet implementation class RegisterdSubjectsShowServlet
+ * Servlet implementation class ProfileStudentsServlet
  */
-@WebServlet("/registeredSubjects/show")
-public class RegisteredSubjectsShowServlet extends HttpServlet {
+@WebServlet("/profile/students")
+public class ProfileStudentsServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public RegisteredSubjectsShowServlet() {
+    public ProfileStudentsServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -33,13 +33,12 @@ public class RegisteredSubjectsShowServlet extends HttpServlet {
      */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         EntityManager em = DButil.createEntityManager();
-        Subject s = em.find(Subject.class, Integer.parseInt(request.getParameter("id")));
 
-        request.getSession().setAttribute("subject_id", s.getId());
-        request.setAttribute("subject", s);
-        request.setAttribute("_token", request.getSession().getId());
+        Person p = (Person)request.getSession().getAttribute("login_person");
 
-        RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/registeredSubjects/show.jsp");
+        request.setAttribute("person", p);
+
+        RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/people/students/profile.jsp");
         rd.forward(request, response);
     }
 

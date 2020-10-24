@@ -43,13 +43,23 @@ public class SubjectsIndexServlet extends HttpServlet {
             page = Integer.parseInt(request.getParameter("page"));
         } catch(NumberFormatException ex) {}
 
-        List<Subject> subjects = null;
+        List<Subject> e_subjects = null;
+        List<Subject> u_subjects = null;
+        List<Subject> d_subjects = null;
         try {
-            subjects = em.createNamedQuery("getAllCollegeSubjects", Subject.class)
+            e_subjects = em.createNamedQuery("getAllCollegeSubjects", Subject.class)
                                    .setParameter("college_code", teacher.getCollege().getCode())
                                    .setFirstResult(30 * (page - 1))
                                    .setMaxResults(30)
                                    .getResultList();
+
+            u_subjects = em.createNamedQuery("getUnderSubjects", Subject.class)
+                                    .setParameter("college_code", teacher.getCollege().getCode())
+                                    .getResultList();
+
+            d_subjects = em.createNamedQuery("getDepartmentSubjects", Subject.class)
+                                    .setParameter("college_code", teacher.getCollege().getCode())
+                                    .getResultList();
         } catch (Exception e) {}
 
         long subjects_count = em.createNamedQuery("getAllCollegeSubjectCount", Long.class)
@@ -58,9 +68,10 @@ public class SubjectsIndexServlet extends HttpServlet {
 
         em.close();
 
-
         request.setAttribute("page", page);
-        request.setAttribute("subjects", subjects);
+        request.setAttribute("e_subjects", e_subjects);
+        request.setAttribute("u_subjects", u_subjects);
+        request.setAttribute("d_subjects", d_subjects);
         request.setAttribute("subjects_count", subjects_count);
 
         RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/subjects/index.jsp");

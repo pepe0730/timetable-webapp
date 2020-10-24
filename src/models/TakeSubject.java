@@ -17,7 +17,19 @@ import javax.persistence.Table;
     @NamedQuery(
             name = "getMyTakeSubjects",
             query = "SELECT t FROM TakeSubject AS t WHERE t.person.code = :student_code"
-            )
+            ),
+    @NamedQuery(
+            name = "getMyTakeSubjectsCount",
+            query = "SELECT COUNT(t) FROM TakeSubject AS t WHERE t.person.code = :student_code"
+            ),
+    @NamedQuery(
+            name = "getRegisteredSubject",
+            query = "SELECT t FROM TakeSubject AS t WHERE t.person.code = :student_code AND t.subject.code = :subject_code"
+            ),
+    @NamedQuery(
+            name = "checkRegisteredTimeAndDate",
+            query = "SELECT t FROM TakeSubject AS t WHERE t.person.code = :student_code AND t.subject.day_of_week = :day_of_week AND t.subject.time = :time"
+            ),
 })
 @Entity
 public class TakeSubject {

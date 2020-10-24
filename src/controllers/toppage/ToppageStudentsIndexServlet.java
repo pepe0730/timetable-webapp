@@ -16,6 +16,7 @@ import models.Person;
 import models.Subject;
 import models.TakeSubject;
 import utils.DButil;
+import utils.Date;
 
 /**
  * Servlet implementation class ToppageStudentsIndexServlet
@@ -67,7 +68,10 @@ public class ToppageStudentsIndexServlet extends HttpServlet {
 
        }
 
+       String day_of_week = Date.getDayOfTheWeek();
+
        request.setAttribute("subject_array", subject_array);
+       request.setAttribute("day_of_week", day_of_week);
 
         RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/topPage/students/index.jsp");
         rd.forward(request, response);

@@ -3,6 +3,8 @@ package controllers.takeSubjects;
 import java.io.IOException;
 
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -42,12 +44,40 @@ public class TakeSubjectsCreateServlet extends HttpServlet {
             t.setPerson(p);
             t.setSubject(s);
 
-            em.getTransaction().begin();
-            em.persist(t);
-            em.getTransaction().commit();
-            em.close();
+            //時限と曜日の重複チェック（すでに履修登録済みの講義と被っていないか）
+            Integer time = s.getTime();
+            String day_of_week = s.getDay_of_week();
 
-            response.sendRedirect(request.getContextPath() + "/takeSubjects/index");
+            TakeSubject registeredSubject = null;
+
+            try {
+                registeredSubject = em.createNamedQuery("checkRegisteredTimeAndDate", TakeSubject.class)
+                        .setParameter("student_code", p.getCode())
+                        .setParameter("day_of_week", day_of_week)
+                        .setParameter("time", time)
+                        .getSingleResult();
+            } catch (NoResultException e){}
+
+
+            if (registeredSubject != null) {
+                em.close();
+                request.setAttribute("error", "この曜日・時限にはすでに講義が登録されています。");
+                request.setAttribute("_token", request.getSession().getId());
+                request.setAttribute("subject", s);
+                RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/takeSubjects/show.jsp");
+                rd.forward(request, response);
+            } else {
+                em.getTransaction().begin();
+                em.persist(t);
+                em.getTransaction().commit();
+                em.close();
+
+                request.setAttribute("error", "");
+                request.removeAttribute("subject_id");
+
+                response.sendRedirect(request.getContextPath() + "/takeSubjects/index");
+            }
+
         }
     }
 

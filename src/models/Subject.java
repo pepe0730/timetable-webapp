@@ -25,11 +25,11 @@ import javax.persistence.Table;
             ),
     @NamedQuery(
             name = "getUnderSubjects",
-            query = "SELECT s FROM Subject AS s WHERE SUBSTRING(s.college.code,1,4) = SUBSTRING(:college_code,1,4) AND s.open_flag = 1 ORDER BY s.id DESC"
+            query = "SELECT s FROM Subject AS s WHERE SUBSTRING(s.college.code,1,6) = SUBSTRING(:college_code,1,6) AND s.open_flag = 1 ORDER BY s.id DESC"
             ),
     @NamedQuery(
             name = "getDepartmentSubjects",
-            query = "SELECT s FROM Subject AS s WHERE SUBSTRING(s.college.code,1,4) = SUBSTRING(:college_code,1,4) AND s.open_flag = 0 ORDER BY s.id DESC"
+            query = "SELECT s FROM Subject AS s WHERE s.college.code = :college_code AND s.open_flag = 0 ORDER BY s.id DESC"
             ),
     @NamedQuery(
             name = "checkRegisteredSubject",

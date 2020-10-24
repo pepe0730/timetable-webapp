@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import models.Person;
 import models.Subject;
 import utils.DButil;
+import utils.Date;
 
 /**
  * Servlet implementation class ToppageTeachersIndexServlet
@@ -63,9 +64,12 @@ public class ToppageTeachersIndexServlet extends HttpServlet {
 
        }
 
+       String day_of_week = Date.getDayOfTheWeek();
+
 
 
         request.setAttribute("subject_array", subject_array);
+        request.setAttribute("day_of_week", day_of_week);
 
         RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/topPage/teachers/index.jsp");
         rd.forward(request, response);

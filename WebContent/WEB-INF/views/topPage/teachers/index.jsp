@@ -9,9 +9,9 @@
                     <h2>
                         <i class="fas fa-calendar-alt"></i>担当講義スケジュール
                     </h2>
-                    <div class="count-box">
+                    <div class="date-box">
                         <h3>今日の曜日</h3>
-                        <p><span class="text-warning">${week}</span></p>
+                        <p><span class="text-warning">${day_of_week}</span></p>
                     </div>
                 </div>
             </div>

@@ -54,10 +54,15 @@ h2 i {
 .count-box p {
     margin-left: 100px;
 }
+
 .count-box p span {
     font-size: 26px;
     margin-right: 10px;
 }
+
+
+
+
 
 header {
     background-color: white;
@@ -437,6 +442,27 @@ footer {
 /*===============
  timetable layout
  ===============*/
+
+ .date-box {
+    background-color: white;
+    width: 200px;
+    height: 100px;
+    box-shadow: 0 0 2rem 0 rgba(53,64,82,.1);
+    border-radius: 10px;
+}
+
+.date-box h3 {
+    margin: 20px 20px 10px 20px;
+}
+
+.date-box p{
+    margin-left: 80px;
+}
+
+.date-box p span {
+    font-size: 26px;
+    margin-right: 10px;
+}
 
  .timetable {
     background-color: white;

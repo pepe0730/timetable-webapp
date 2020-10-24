@@ -4,6 +4,14 @@
     <c:param name="content">
         <div class="main">
             <div class="container">
+                <c:if test="${error != null}">
+                    <div id="flush_error">
+                        <div class="error-content">
+                            <h3 class="font-weight-bold"><span class="mr-3 badge badge-danger">Error</span>履修登録に失敗しました。</h3>
+                            <p><i class="fas fa-check mr-3"></i><c:out value="${error}" /></p>
+                        </div>
+                    </div>
+                </c:if>
                 <div class="heading-wrapper">
                     <h2>
                         <i class="fas fa-book"></i>講義詳細:&nbsp;${subject.name}

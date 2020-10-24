@@ -50,9 +50,14 @@ public class TakeSubjectsIndexServlet extends HttpServlet {
                                                 .setParameter("college_code", login_person.getCollege().getCode())
                                                 .getResultList();
 
+        long registeredSubjects_count = em.createNamedQuery("getMyTakeSubjectsCount", Long.class)
+                                                        .setParameter("student_code", login_person.getCode())
+                                                        .getSingleResult();
+
         request.setAttribute("e_subjects", everyone_subjects);
         request.setAttribute("u_subjects", u_subjects);
         request.setAttribute("d_subjects", d_subjects);
+        request.setAttribute("subjects_count", registeredSubjects_count);
 
         RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/takeSubjects/index.jsp");
         rd.forward(request, response);
