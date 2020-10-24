@@ -94,7 +94,10 @@ header .header-right a {
     line-height: 70px;
     margin: 0 60px;
     opacity: 0.5;
-    transition: all 0.5;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all  0.5s ease;
 }
 
 header .header-right a:hover {
@@ -125,10 +128,6 @@ header .header-right a:hover {
 
 .sidebar ul li {
     margin: 40px 0;
-}
-
-.slidebar ul li a {
-    transition: all 1.5s;
 }
 
 .sidebar ul li a:hover {
@@ -371,7 +370,6 @@ footer {
     left: 37px;
 }
 
-
 .login-form {
     background-color: white;
     padding: 40px 45px 10px 45px;
@@ -442,6 +440,7 @@ footer {
 
  .timetable {
     background-color: white;
+
 }
 
 .timetable tbody tr {
@@ -451,14 +450,25 @@ footer {
 .timetable tbody tr td {
     height: 100px;
     text-align: center;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all  0.2s ease;
+}
 
+.timetable tbody tr td:hover {
+    box-shadow: 0 1rem 2rem 0 rgba(53,64,82,.1);
+}
+
+.timetable tbody td a {
+    display: block;
 }
 
 .timetable tbody tr td p {
-    width: 80px;
-    margin: 0 auto;
+    width: 100px;
+    margin: 10px auto;
+    font-size: 14px;
 }
-
 
 .timetable tbody tr th {
     width: 50px;
@@ -474,13 +484,99 @@ footer {
 
 .timetable tbody .red {
     background-color: rgba(245,49,49,0.3);
+     -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+.timetable tbody .red:hover {
+    background-color: rgba(245,49,49,0.4);
 }
 
 .timetable tbody .blue {
-    background-color: blue;
+    background-color: rgba(20,76,245,0.3);
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
 }
 
+.timetable tbody .blue:hover {
+    background-color: rgba(20,76,245,0.4);
+}
 
+.timetable tbody .yellow {
+    background-color: rgba(245,245,42,0.3);
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+.timetable tbody .yellow:hover {
+    background-color: rgba(245,245,42,0.4);
+}
+
+.timetable tbody .green {
+    background-color: rgba(48,176,131,0.3);
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+.timetable tbody .green:hover {
+    background-color: rgba(48,176,131,0.4);
+}
+
+.timetable tbody .yellow_green {
+    background-color: rgba(132,255,66,0.3);
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+.timetable tbody .yellow_green:hover {
+    background-color: rgba(132,255,66,0.4);
+}
+
+.timetable tbody .purple {
+    background-color: rgba(198,66,255,0.3);
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+.timetable tbody .purple:hover {
+    background-color: rgba(198,66,255,0.4);
+}
+
+.timetable tbody .grey {
+    background-color: rgba(199,199,199,0.3);
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+.timetable tbody .grey:hover {
+    background-color: rgba(199,199,199,0.4);
+}
+
+.timetable tbody .brown {
+    background-color: rgba(189,104,19,0.3);
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+.timetable tbody .brown:hover {
+    background-color: rgba(189,104,19,0.4);
+}
 
 /*===============
  subjects show.jsp
@@ -508,10 +604,3 @@ footer {
     border-radius: 10px;
     box-shadow: 0 0 2rem 0 rgba(53,64,82,.1);
 }
-
-
-
-
-
-
-

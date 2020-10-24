@@ -7,10 +7,18 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Table (name = "takesubject")
 
+@NamedQueries({
+    @NamedQuery(
+            name = "getMyTakeSubjects",
+            query = "SELECT t FROM TakeSubject AS t WHERE t.person.code = :student_code"
+            )
+})
 @Entity
 public class TakeSubject {
     @Id

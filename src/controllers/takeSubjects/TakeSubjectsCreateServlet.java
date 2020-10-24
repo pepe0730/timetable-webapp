@@ -48,8 +48,6 @@ public class TakeSubjectsCreateServlet extends HttpServlet {
             em.close();
 
             response.sendRedirect(request.getContextPath() + "/takeSubjects/index");
-
-
         }
     }
 

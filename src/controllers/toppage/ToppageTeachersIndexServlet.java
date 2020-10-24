@@ -44,7 +44,7 @@ public class ToppageTeachersIndexServlet extends HttpServlet {
                                         .getResultList();
 
         Subject subject_array[][];
-        subject_array = new Subject[7][5];
+        subject_array = new Subject[9][5];
 
        for (Subject subject : subjects) {
            if (subject.getDay_of_week().equals("monday")) {

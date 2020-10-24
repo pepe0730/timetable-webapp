@@ -41,6 +41,6 @@ public class TakeSubjectsShowServlet extends HttpServlet {
 
         RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/takeSubjects/show.jsp");
         rd.forward(request, response);
+        
     }
-
 }
