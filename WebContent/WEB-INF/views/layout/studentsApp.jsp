@@ -30,9 +30,8 @@
         </h1>
         <ul>
             <li><a href="<c:url value='/profile/students '/>">プロフィール</a></li>
-            <li><a href="#">履修登録</a></li>
+            <li><a href="<c:url value='/takeSubjects/index '/>">履修登録</a></li>
             <li><a href="<c:url value='/students/index.html '/>">履修状況</a></li>
-
         </ul>
     </nav>
     <main class="col-10" style="padding: 0;">

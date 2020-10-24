@@ -17,11 +17,19 @@ import javax.persistence.Table;
 @NamedQueries({
     @NamedQuery(
             name = "getAllCollegeSubjects",
-            query = "SELECT s FROM Subject AS s WHERE SUBSTRING(s.college.code,1,4) = SUBSTRING(:college_code,1,4) ORDER BY s.id DESC"
+            query = "SELECT s FROM Subject AS s WHERE SUBSTRING(s.college.code,1,4) = SUBSTRING(:college_code,1,4) AND s.open_flag = 2 ORDER BY s.id DESC"
             ),
     @NamedQuery(
             name = "getAllCollegeSubjectCount",
             query = "SELECT COUNT(s) FROM Subject AS s WHERE SUBSTRING(s.college.code,1,4) = SUBSTRING(:college_code,1,4)"
+            ),
+    @NamedQuery(
+            name = "getUnderSubjects",
+            query = "SELECT s FROM Subject AS s WHERE SUBSTRING(s.college.code,1,4) = SUBSTRING(:college_code,1,4) AND s.open_flag = 1 ORDER BY s.id DESC"
+            ),
+    @NamedQuery(
+            name = "getDepartmentSubjects",
+            query = "SELECT s FROM Subject AS s WHERE SUBSTRING(s.college.code,1,4) = SUBSTRING(:college_code,1,4) AND s.open_flag = 0 ORDER BY s.id DESC"
             ),
     @NamedQuery(
             name = "checkRegisteredSubject",

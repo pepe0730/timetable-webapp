@@ -5,6 +5,7 @@
 		<class>models.Person</class>
 		<class>models.College</class>
 		<class>models.Subject</class>
+		<class>models.TakeSubject</class>
 		<properties>
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
 			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost/timetable_webapp?useSSL=false&amp;useUnicode=true&amp;characterEncoding=utf8"/>

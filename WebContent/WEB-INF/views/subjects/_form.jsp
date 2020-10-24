@@ -54,12 +54,12 @@
     <label class="col-2 col-form-label" for="day_of_week">開講曜日 : </label>
     <div class="col-3">
         <select class="form-control" name="day_of_week">
-        <option value=0>月曜日</option>
-        <option value=1>火曜日</option>
-        <option value=2>水曜日</option>
-        <option value=3>木曜日</option>
-        <option value=4>金曜日</option>
-        <option value=5>土曜日</option>
+        <option value="monday">月曜日</option>
+        <option value="tuesday">火曜日</option>
+        <option value="wednesday">水曜日</option>
+        <option value="thursday">木曜日</option>
+        <option value="friday">金曜日</option>
+        <option value="saturday">土曜日</option>
         </select>
     </div>
 </div>
@@ -68,14 +68,14 @@
     <label class="col-2 col-form-label" for="time">開講時限 : </label>
     <div class="col-3">
         <select class="form-control" name="time">
-        <option value=0>1限</option>
-        <option value=1>2限</option>
-        <option value=2>3限</option>
-        <option value=3>4限</option>
-        <option value=4>5限</option>
-        <option value=5>6限</option>
-        <option value=6>7限</option>
-        <option value=7>8限</option>
+        <option value=1>1限</option>
+        <option value=2>2限</option>
+        <option value=3>3限</option>
+        <option value=4>4限</option>
+        <option value=5>5限</option>
+        <option value=6>6限</option>
+        <option value=7>7限</option>
+        <option value=8>8限</option>
         </select>
     </div>
 </div>
