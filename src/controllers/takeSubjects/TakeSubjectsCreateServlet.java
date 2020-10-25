@@ -72,7 +72,8 @@ public class TakeSubjectsCreateServlet extends HttpServlet {
                 em.getTransaction().commit();
                 em.close();
 
-                request.setAttribute("error", "");
+
+                request.getSession().setAttribute("flush", "履修登録が完了しました。");
                 request.removeAttribute("subject_id");
 
                 response.sendRedirect(request.getContextPath() + "/takeSubjects/index");

@@ -5,6 +5,14 @@
     <c:param name="content">
         <div class="main">
             <div class="container">
+                <c:if test="${flush != null}">
+                    <div id="flush_success">
+                        <div class="success-content">
+                            <h3 class="font-weight-bold"><span class="mr-3 badge badge-success">Success</span>正常に動作しました</h3>
+                            <p><i class="fas fa-check mr-3"></i><c:out value="${flush}" /></p>
+                        </div>
+                    </div>
+                </c:if>
                 <div class="heading-wrapper">
                     <h2>
                         <i class="fas fa-calendar-alt"></i>担当講義スケジュール

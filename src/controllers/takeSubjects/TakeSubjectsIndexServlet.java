@@ -58,6 +58,10 @@ public class TakeSubjectsIndexServlet extends HttpServlet {
         request.setAttribute("u_subjects", u_subjects);
         request.setAttribute("d_subjects", d_subjects);
         request.setAttribute("subjects_count", registeredSubjects_count);
+        if (request.getSession().getAttribute("flush") != null) {
+            request.setAttribute("flush", request.getSession().getAttribute("flush"));
+            request.getSession().removeAttribute("flush");
+        }
 
         RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/takeSubjects/index.jsp");
         rd.forward(request, response);

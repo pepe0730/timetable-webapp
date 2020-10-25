@@ -1,6 +1,7 @@
 package controllers.subjects;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.servlet.ServletException;
@@ -10,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import models.Subject;
+import models.TakeSubject;
 import utils.DButil;
 
 /**
@@ -35,6 +37,23 @@ public class SubjectsDestroyServlet extends HttpServlet {
         if (_token != null && _token.equals("")) {
             EntityManager em = DButil.createEntityManager();
             Subject s = em.find(Subject.class, (Integer)request.getSession().getAttribute("subject_id"));
+
+            List<TakeSubject> takeSubjects = null;
+
+            try {
+                takeSubjects = em.createNamedQuery("destroySubjects", TakeSubject.class)
+                                                    .setParameter("code", s.getCode())
+                                                    .setParameter("college_code", s.getCollege().getCode())
+                                                    .getResultList();
+            } catch (Exception e) {}
+
+            if (takeSubjects.size() > 0) {
+                for (TakeSubject takeSubject : takeSubjects) {
+                    em.getTransaction().begin();
+                    em.remove(takeSubject);
+                    em.getTransaction().commit();
+                }
+            }
 
             em.getTransaction().begin();
             em.remove(s);

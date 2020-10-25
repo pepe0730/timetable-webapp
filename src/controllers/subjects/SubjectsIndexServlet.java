@@ -74,6 +74,11 @@ public class SubjectsIndexServlet extends HttpServlet {
         request.setAttribute("d_subjects", d_subjects);
         request.setAttribute("subjects_count", subjects_count);
 
+        if(request.getSession().getAttribute("flush") != null) {
+            request.setAttribute("flush", request.getSession().getAttribute("flush"));
+            request.getSession().removeAttribute("flush");
+        }
+
         RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/subjects/index.jsp");
         rd.forward(request, response);
     }
