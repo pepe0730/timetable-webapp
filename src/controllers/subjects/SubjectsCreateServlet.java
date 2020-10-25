@@ -5,6 +5,7 @@ import java.sql.Timestamp;
 import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -70,6 +71,20 @@ public class SubjectsCreateServlet extends HttpServlet {
 
                 if (p != null) {
                     s.setTeacher(p);
+
+                  //同じ時間・曜日に複数講義登録できないようにバリデーション
+                    Subject r_subject = null;
+                    try {
+                        r_subject = em.createNamedQuery("checkRegisteredDateaAndTime", Subject.class)
+                                               .setParameter("teacher_code", s.getTeacher().getCode())
+                                               .setParameter("time", s.getTime())
+                                               .setParameter("day_of_week", s.getDay_of_week())
+                                               .getSingleResult();
+                    } catch (NoResultException  e) {}
+
+                    if (r_subject != null) {
+                        errors.add("選択した時限・曜日にはすでに担当講義が存在します。");
+                    }
                 } else {
                     errors.add("このコードの教授は存在しません");
                 }
@@ -96,6 +111,7 @@ public class SubjectsCreateServlet extends HttpServlet {
                     errors.add("操作対象外です。大学コードを確認してください");
                 }
             }
+
 
             if (errors.size() > 0) {
                 em.close();
