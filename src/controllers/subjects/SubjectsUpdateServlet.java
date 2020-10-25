@@ -5,6 +5,7 @@ import java.sql.Timestamp;
 import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -64,11 +65,20 @@ public class SubjectsUpdateServlet extends HttpServlet {
             String color = request.getParameter("color");
             s.setColor(color);
 
+            //時間と曜日に値に変更があれば、重複チェックする
+            Boolean time_duplicate_check_flag = false;
             String day_of_week = request.getParameter("day_of_week");
-            s.setDay_of_week(day_of_week);
+            if (!s.getDay_of_week().equals(day_of_week)) {
+                time_duplicate_check_flag = true;
+                s.setDay_of_week(day_of_week);
+            }
 
             Integer time = Integer.parseInt(request.getParameter("time"));
-            s.setTime(time);
+            if (s.getTime() != time) {
+                time_duplicate_check_flag = true;
+                s.setTime(time);
+            }
+
 
             String description = request.getParameter("description");
             s.setDescription(description);
@@ -95,7 +105,20 @@ public class SubjectsUpdateServlet extends HttpServlet {
                     errors.add("このコードの教授は存在しません");
                 }
             }
+            if (time_duplicate_check_flag) {
+                Subject r_subject = null;
+                try {
+                    r_subject = em.createNamedQuery("checkRegisteredDateaAndTime", Subject.class)
+                                           .setParameter("teacher_code", s.getTeacher().getCode())
+                                           .setParameter("time", s.getTime())
+                                           .setParameter("day_of_week", s.getDay_of_week())
+                                           .getSingleResult();
+                } catch (NoResultException  e) {}
 
+                if (r_subject != null) {
+                    errors.add("選択した時限・曜日にはすでに担当講義が存在します。");
+                }
+            }
             if (!college_code.equals(s.getCollege().getCode()) && !college_code.equals("")) {
                 College c = null;
                 try {
