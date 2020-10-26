@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import models.College;
 import models.Person;
 import models.Subject;
 import models.TakeSubject;
@@ -40,9 +41,11 @@ public class TakeSubjectsCreateServlet extends HttpServlet {
             EntityManager em = DButil.createEntityManager();
             Person p = (Person)request.getSession().getAttribute("login_person");
             Subject s = em.find(Subject.class, (Integer)request.getSession().getAttribute("subject_id"));
+            College c = s.getCollege();
             TakeSubject t = new TakeSubject();
             t.setPerson(p);
             t.setSubject(s);
+            t.setCollege(c);
 
             //時限と曜日の重複チェック（すでに履修登録済みの講義と被っていないか）
             Integer time = s.getTime();

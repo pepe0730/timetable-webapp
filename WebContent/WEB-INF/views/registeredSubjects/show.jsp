@@ -130,7 +130,7 @@
                             </div>
                             <div class="subject-description">
                                 <h3 class="font-weight-bold">講義概要</h3>
-                                <p class="mt-5 ml-2">a<c:out value="${subject.description}"/></p>
+                                <p class="mt-5 ml-2"><c:out value="${subject.description}"/></p>
                             </div>
                         </div>
                         <div class="show-date-wrapper">

@@ -73,6 +73,11 @@ public class ToppageStudentsIndexServlet extends HttpServlet {
        request.setAttribute("subject_array", subject_array);
        request.setAttribute("day_of_week", day_of_week);
 
+       if (request.getSession().getAttribute("flush") != null) {
+           request.setAttribute("flush", request.getSession().getAttribute("flush"));
+           request.getSession().removeAttribute("flush");
+       }
+
         RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/topPage/students/index.jsp");
         rd.forward(request, response);
 

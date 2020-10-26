@@ -50,6 +50,8 @@ public class RegisteredSubjectsDestroyServlet extends HttpServlet {
             em.getTransaction().commit();
             em.close();
 
+            request.getSession().setAttribute("flush", "講義を削除しました。");
+
             response.sendRedirect(request.getContextPath() + "/students/index.html");
 
         }

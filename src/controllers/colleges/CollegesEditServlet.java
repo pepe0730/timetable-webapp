@@ -39,7 +39,7 @@ public class CollegesEditServlet extends HttpServlet {
         em.close();
 
         request.setAttribute("college", c);
-        request.getSession().setAttribute("_token", request.getSession().getId());
+        request.setAttribute("_token", request.getSession().getId());
 
         RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/colleges/edit.jsp");
         rd.forward(request, response);

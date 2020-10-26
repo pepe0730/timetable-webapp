@@ -33,7 +33,16 @@ import javax.persistence.Table;
     @NamedQuery(
             name = "destroySubjects",
             query = "SELECT t FROM TakeSubject AS t WHERE t.subject.code = :code AND t.subject.college.code = :college_code"
+            ),
+    @NamedQuery(
+            name = "destroyColleges",
+            query = "SELECT t FROM TakeSubject AS t WHERE t.college.code = :college_code"
+            ),
+    @NamedQuery(
+            name = "test",
+            query = "SELECT t FROM TakeSubject AS t WHERE t.college.code = :code"
             )
+
 })
 @Entity
 public class TakeSubject {
@@ -49,6 +58,10 @@ public class TakeSubject {
     @ManyToOne
     @JoinColumn (name = "subject_id", nullable = false)
     private Subject subject;
+
+    @ManyToOne
+    @JoinColumn (name = "college_id", nullable = false)
+    private College college;
 
     public Integer getId() {
         return id;
@@ -72,5 +85,13 @@ public class TakeSubject {
 
     public void setSubject(Subject subject) {
         this.subject = subject;
+    }
+
+    public College getCollege() {
+        return college;
+    }
+
+    public void setCollege(College college) {
+        this.college = college;
     }
 }

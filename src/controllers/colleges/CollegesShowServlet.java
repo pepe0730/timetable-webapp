@@ -39,6 +39,7 @@ public class CollegesShowServlet extends HttpServlet {
         em.close();
 
         request.setAttribute("college", c);
+        request.setAttribute("_token", request.getSession().getId());
         request.getSession().setAttribute("college_id", c.getId());
 
         RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/colleges/show.jsp");

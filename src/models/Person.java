@@ -50,6 +50,10 @@ import javax.persistence.Table;
     @NamedQuery (
             name = "getTeacher",
             query = "SELECT p FROM Person AS p WHERE p.authority = 1 AND p.code = :teacher_code"
+            ),
+    @NamedQuery (
+            name = "getAllCollegePeople",
+            query = "SELECT p FROM Person AS p WHERE p.college.code = :college_code"
             )
 
 })

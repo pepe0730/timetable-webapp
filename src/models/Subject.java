@@ -42,6 +42,10 @@ import javax.persistence.Table;
     @NamedQuery(
             name = "checkRegisteredDateaAndTime",
             query = "SELECT s FROM Subject AS s WHERE s.teacher.code = :teacher_code AND s.time = :time AND s.day_of_week = :day_of_week"
+            ),
+    @NamedQuery(
+            name = "destroySubject",
+            query = "SELECT s FROM Subject AS s WHERE s.college.code = :college_code"
             )
 })
 @Entity
