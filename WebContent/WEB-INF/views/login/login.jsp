@@ -40,7 +40,7 @@
                 <div id="flush_error">
                     <div class="error-content">
                             <h3 class="font-weight-bold"><span class="mr-3 badge badge-danger">Error</span>ログインに失敗しました。</h3>
-                            <p>個人コード,大学コード,パスワードが違います</p>
+                            <p>個人コード・大学コード・パスワードの組み合わせが違います</p>
                     </div>
                 </div>
             </c:if>
