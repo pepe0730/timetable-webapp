@@ -42,13 +42,13 @@ public class CollegesDestroyServlet extends HttpServlet {
 
             College c = em.find(College.class, (Integer)request.getSession().getAttribute("college_id"));
 
-            System.out.println(c.getName() + c.getCode());
+            /*System.out.println(c.getName() + c.getCode());
 
-            TakeSubject test = em.createNamedQuery("test", TakeSubject.class)
+            /*TakeSubject test = em.createNamedQuery("test", TakeSubject.class)
                                              .setParameter("code", c.getCode())
                                              .getSingleResult();
 
-            System.out.println(test.getCollege().getName() + test.getCollege().getCode());
+            System.out.println(test.getCollege().getName() + test.getCollege().getCode());*/
 
             List<TakeSubject> college_takeSubjects = null;
 

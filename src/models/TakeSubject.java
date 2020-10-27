@@ -39,8 +39,8 @@ import javax.persistence.Table;
             query = "SELECT t FROM TakeSubject AS t WHERE t.college.code = :college_code"
             ),
     @NamedQuery(
-            name = "test",
-            query = "SELECT t FROM TakeSubject AS t WHERE t.college.code = :code"
+            name = "destroyStudent",
+            query = "SELECT t FROM TakeSubject AS t WHERE t.person.code = :code"
             )
 
 })

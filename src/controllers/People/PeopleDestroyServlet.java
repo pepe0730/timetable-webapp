@@ -1,8 +1,10 @@
 package controllers.people;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -10,6 +12,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import models.Person;
+import models.Subject;
+import models.TakeSubject;
 import utils.DButil;
 
 /**
@@ -36,6 +40,37 @@ public class PeopleDestroyServlet extends HttpServlet {
         if (_token != null && _token.equals(request.getSession().getId())) {
             EntityManager em = DButil.createEntityManager();
             Person p = em.find(Person.class, (Integer)request.getSession().getAttribute("person_id"));
+
+            Integer authority = Integer.parseInt(request.getParameter("authority"));
+
+            if (authority == 1) {
+                List<Subject> subjects = null;
+                try {
+                    subjects = em.createNamedQuery("destroyTeacher", Subject.class)
+                                                .setParameter("code", p.getCode())
+                                                .getResultList();
+                } catch (NoResultException e) {}
+                for (Subject subject : subjects) {
+                    em.getTransaction().begin();
+                    em.remove(subject);
+                    em.getTransaction().commit();
+                }
+
+            } else if (authority ==  0) {
+                List<TakeSubject> takeSubjects = null;
+                try {
+                    takeSubjects = em.createNamedQuery("destroyStudent", TakeSubject.class)
+                            .setParameter("code", p.getCode())
+                            .getResultList();
+                } catch (NoResultException e) {}
+
+                for (TakeSubject takeSubject : takeSubjects) {
+                    em.getTransaction().begin();
+                    em.remove(takeSubject);
+                    em.getTransaction().commit();
+                }
+            }
+
             em.getTransaction().begin();
             em.remove(p);
             em.getTransaction().commit();
@@ -43,7 +78,7 @@ public class PeopleDestroyServlet extends HttpServlet {
 
             request.getSession().setAttribute("flush","削除しました");
 
-            Integer authority = Integer.parseInt(request.getParameter("authority"));
+
             if (authority == 2) {
                 response.sendRedirect(request.getContextPath() + "/admins/index.html");
             } else if (authority == 1) {

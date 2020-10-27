@@ -46,6 +46,10 @@ import javax.persistence.Table;
     @NamedQuery(
             name = "destroySubject",
             query = "SELECT s FROM Subject AS s WHERE s.college.code = :college_code"
+            ),
+    @NamedQuery(
+            name = "destroyTeacher",
+            query = "SELECT s FROM Subject AS s WHERE s.teacher.code = :code"
             )
 })
 @Entity

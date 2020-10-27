@@ -38,6 +38,7 @@ public class PeopleShowServlet extends HttpServlet {
         em.close();
 
         request.setAttribute("person", p);
+        request.setAttribute("_token", request.getSession().getId());
         request.getSession().setAttribute("person_id", p.getId());
 
 

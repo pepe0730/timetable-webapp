@@ -37,7 +37,7 @@ public class PeopleEditServlet extends HttpServlet {
         Person p = em.find(Person.class, Integer.parseInt(request.getParameter("id")));
         em.close();
 
-        request.getSession().setAttribute("_token", request.getSession().getId());
+
         request.setAttribute("person", p);
 
         Integer authority = Integer.parseInt(request.getParameter("authority"));
