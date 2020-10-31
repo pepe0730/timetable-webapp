@@ -27,11 +27,11 @@
         <div class="header-left">
             <h1 class="d-inline-block">
                 <a class="text-primary" href="<c:url value='/admins/index.html' />">
-                    <img src="<c:url value='/img/icon_111060_256.png' />">
+
                     C.house
                 </a>
             </h1>
-            <p class="d-inline-block">~オンライン授業サポートアプリ~</p>
+            <p class="d-md-inline-block d-none">~オンライン授業サポートアプリ~</p>
         </div>
      </header>
      <div class="main login">

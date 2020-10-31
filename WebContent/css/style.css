@@ -654,3 +654,45 @@ footer {
     border-radius: 10px;
     box-shadow: 0 0 2rem 0 rgba(53,64,82,.1);
 }
+
+
+
+/*=========================================================
+                       Responsive
+=========================================================*/
+
+
+@media screen and (max-width: 765px) {
+
+    /*login*/
+    header .header-left h1 {
+        margin-left: 20px;
+        line-height: 70px;
+    }
+
+    .login-form-wrapper span {
+        margin: 30px auto;
+    }
+
+    .login-form-wrapper {
+        width: 100%;
+        margin: 40px 0;
+    }
+    .login-form {
+        padding: 40px 0 10px 0;
+        width: 100%;
+        margin: 30px auto 50px auto;
+    }
+
+    .login-form .input-area {
+        width: 70%;
+        margin: 40px auto;
+    }
+    .login-form .input-area p {
+        margin-left: 10px;
+    }
+
+
+
+
+}
