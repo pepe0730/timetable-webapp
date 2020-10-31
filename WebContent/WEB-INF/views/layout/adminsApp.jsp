@@ -17,11 +17,12 @@
 <title>C.house</title>
 <link rel="stylesheet" href="<c:url value='/css/reset.css' />">
 <link rel="stylesheet" href="<c:url value='/css/style.css' />">
+
 <script src="https://kit.fontawesome.com/b24292ab52.js"
     crossorigin="anonymous"></script>
 </head>
 <body class="row">
-    <nav class="sidebar col-2">
+    <nav class="sidebar col-md-2 d-none d-md-block">
         <h1>
             <a class="text-primary" href="<c:url value='/admins/index.html' />">
                 <img src="<c:url value='/img/icon_111060_256.png' />">
@@ -36,14 +37,39 @@
             <li><a href="<c:url value='/admins/index.html' /> ">管理者情報</a>
         </ul>
     </nav>
-    <main class="col-10" style="padding: 0;">
+    <main class="col-md-10 col-12" style="padding: 0;">
         <header>
             <div class="header-left">
-                <p>~オンライン授業サポートアプリ~</p>
+                <h1 class="d-md-none">
+                    <a class="text-primary" href="<c:url value='/admins/index.html' />">
+                        <img src="<c:url value='/img/icon_111060_256.png' />">
+                        C.house
+                    </a>
+                </h1>
+                <p class="d-none d-md-block">~オンライン授業サポートアプリ~</p>
             </div>
             <div class="header-right">
                 <p class="d-inline-block">${login_person.name}さん</p>
-                <a href="<c:url value='/logout' />">Logout</a>
+                <a class="d-none d-md-inline-block"href="<c:url value='/logout' />">Logout</a>
+                <a id="header-modal-btn"class="d-inline-block d-md-none"><i class="fas fa-bars"></i></a>
+            </div>
+            <div id="header-modal-wrapper" class="d-md-none header-modal-wrapper">
+                <div class="header-modal">
+                    <div id="close-modal">
+                        <i class="fas fa-times"></i>
+                    </div>
+                    <div class="content">
+                        <h3>menu</h3>
+                        <ul>
+                            <li><a href="<c:url value='/profile/admins '/>">プロフィール</a></li>
+                            <li><a href="<c:url value='/colleges/index '/>">大学情報</a></li>
+                            <li><a href="<c:url value='/people/teachers/index '/>">教授情報</a></li>
+                            <li><a href="<c:url value='/people/students/index '/>">生徒情報</a></li>
+                            <li><a href="<c:url value='/admins/index.html' /> ">管理者情報</a>
+                            <li class="font-weight-bold"><a href="<c:url value='/logout' />">Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </header>
         <div id="content">${param.content}</div>
@@ -61,5 +87,6 @@
         src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
         crossorigin="anonymous"></script>
+    <script src="<c:url value='/js/main.js' />"></script>
 </body>
 </html>

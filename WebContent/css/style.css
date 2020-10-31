@@ -60,10 +60,6 @@ h2 i {
     margin-right: 10px;
 }
 
-
-
-
-
 header {
     background-color: white;
     box-shadow: 0 0 2rem 0 rgba(53,64,82,.1);
@@ -120,7 +116,7 @@ header .header-right a:hover {
     font-size: 20px;
 }
 
-.sidebar h1  a img {
+.sidebar h1 a img {
     width: 20px;
     height: 20px;
     margin-right: 10px;
@@ -669,7 +665,6 @@ footer {
         margin-left: 20px;
         line-height: 70px;
     }
-
     .login-form-wrapper span {
         margin: 30px auto;
     }
@@ -683,7 +678,6 @@ footer {
         width: 100%;
         margin: 30px auto 50px auto;
     }
-
     .login-form .input-area {
         width: 70%;
         margin: 40px auto;
@@ -691,6 +685,125 @@ footer {
     .login-form .input-area p {
         margin-left: 10px;
     }
+
+    /* h2 heading */
+    .heading-wrapper {
+        width: 100%;
+        margin: 40px auto;
+    }
+    .heading-wrapper h2 {
+        font-size: 18px;
+    }
+    .count-box {
+        width: 160px;
+        height: 90px;
+        margin-right: 10px;
+    }
+    .count-box h3 {
+        font-size: 80%;
+    }
+
+    .count-box p span {
+        font-size: 20px;
+        margin-right: 10px;
+    }
+
+    /*templete header&modal */
+    #header-modal-btn {
+        margin: 0 30px 0 15px;
+    }
+    header .header-left h1 a img {
+        width: 18px;
+        height: 18px;
+        margin-left: 5px;
+        margin-right: 0;
+        margin-bottom: 2px;
+    }
+    header p {
+        margin-left: 0;
+        font-size: 14px;
+        line-height: 70px;
+    }
+    .header-modal-wrapper {
+        display: none;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.6);
+        z-index: 100;
+    }
+    .header-modal {
+        background-color: white;
+        border-radius: 10px;
+        position: absolute;
+        top: 120px;
+        left: 60px;
+    }
+    .header-modal #close-modal {
+        margin-top: 20px;
+        margin-left: 20px;
+        font-size: 20px;
+    }
+    .header-modal .content {
+        padding: 0 100px 30px 100px;
+        text-align: center;
+    }
+    .header-modal .content h3 {
+        font-weight: bold;
+        font-size: 22px;
+    }
+    .header-modal ul li {
+        margin: 40px 0;
+    }
+    .header-modal ul li a {
+        opacity: 0.9;
+        -webkit-transition: all 0.5s ease;
+        -moz-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+        transition: all  0.5s ease;
+    }
+    .header-modal ul li a:hover {
+        opacity: 1;
+    }
+
+    /* index table */
+    .table-wrapper {
+        width: calc(100% - 30px);
+    }
+
+    .table-wrapper h3 {
+        margin-left: 30px;
+        margin-top: 20px;
+    }
+    .table {
+        width: calc(100% - 20px);
+    }
+    .table td, .table th {
+        padding: .75rem;
+        vertical-align: top;
+        border-top: 1px solid #dee2e6;
+        font-size: 14px;
+    }
+    .table .btn-info {
+        font-size: 0.7rem;
+        padding: .3rem .6rem;
+    }
+    .pagenation {
+        margin-left: 20px;
+    }
+
+    .new-btn-wrapper {
+        margin: 40px auto;
+        padding: 10px 20px;
+        width: 200px;
+    }
+    .new-btn-wrapper a {
+        width: auto;
+    }
+
+
 
 
 
