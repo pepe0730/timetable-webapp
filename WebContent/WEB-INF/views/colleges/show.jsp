@@ -16,28 +16,28 @@
                             <div class="data-wrapper">
                                 <h3>College data</h3>
                                 <div class="data-contents row">
-                                    <div class="data col-md-5">
+                                    <div class="data col-5">
                                         <p>大学名：</p>
                                     </div>
-                                    <div class="data col-md-6">
+                                    <div class="data col-6">
                                         <c:out value="${college.name}" />
                                     </div>
-                                    <div class="data col-md-5">
+                                    <div class="data col-5">
                                         <p>学部名：</p>
                                     </div>
-                                    <div class="data col-md-6">
+                                    <div class="data col-6">
                                         <c:out value="${college.undergraduate_name}" />
                                     </div>
-                                    <div class="data col-md-5">
+                                    <div class="data col-5">
                                         <p>学科名：</p>
                                     </div>
-                                    <div class="data col-md-6">
+                                    <div class="data col-6">
                                         <c:out value="${college.department_name}" />
                                     </div>
-                                    <div class="data col-md-5">
+                                    <div class="data col-5">
                                         <p>コード：</p>
                                     </div>
-                                    <div class="data col-md-6">
+                                    <div class="data col-6">
                                         <c:out value="${college.code}" />
                                     </div>
                                 </div>

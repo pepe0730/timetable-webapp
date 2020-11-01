@@ -15,7 +15,7 @@
                 </c:if>
                 <div class="heading-wrapper">
                     <h2>
-                        <i class="fas fa-calendar-alt"></i>担当講義スケジュール
+                        <i class="fas fa-calendar-alt"></i>担当講義
                     </h2>
                     <div class="date-box">
                         <h3>今日の曜日</h3>
@@ -24,6 +24,431 @@
                 </div>
             </div>
         </div>
+
+        <!-- mobile -->
+
+        <div class="d-md-none carousel">
+            <ul class="tables">
+                <li>
+                    <h3>月曜日</h3>
+                    <table class="table table-bordered md-timetable">
+                        <tr>
+                            <th>1限</th>
+                            <td class="${subject_array[1][0].color}"><a
+                                href="<c:url value='/subjects/show?id=${subject_array[1][0].id}'/>">
+                                    <p>${subject_array[1][0].name}</p>
+                                    <p>${subject_array[1][0].teacher.name}</p>
+                            </a></td>
+                        </tr>
+                        <tr>
+                            <th>2限</th>
+                            <td class="${subject_array[2][0].color}"><a
+                                href="<c:url value='/subjects/show?id=${subject_array[2][0].id}'/>">
+                                    <p>${subject_array[2][0].name}</p>
+                                    <p>${subject_array[2][0].teacher.name}</p>
+                            </a></td>
+                        </tr>
+                        <tr>
+                            <th>3限</th>
+                            <td class="${subject_array[3][0].color}"><a
+                                href="<c:url value='/subjects/show?id=${subject_array[3][0].id}'/>">
+                                    <p>${subject_array[3][0].name}</p>
+                                    <p>${subject_array[3][0].teacher.name}</p>
+                            </a></td>
+                        </tr>
+                        <tr>
+                            <th>4限</th>
+                            <td class="${subject_array[4][0].color}"><a
+                                href="<c:url value='/subjects/show?id=${subject_array[4][0].id}'/>">
+                                    <p>${subject_array[4][0].name}</p>
+                                    <p>${subject_array[4][0].teacher.name}</p>
+                            </a></td>
+                        </tr>
+                        <tr>
+                            <th>5限</th>
+                            <td class="${subject_array[5][0].color}"><a
+                                href="<c:url value='/subjects/show?id=${subject_array[5][0].id}'/>">
+                                    <p>${subject_array[5][0].name}</p>
+                                    <p>${subject_array[5][0].teacher.name}</p>
+                            </a></td>
+                        </tr>
+                        <tr>
+                            <th>6限</th>
+                            <td class="${subject_array[6][0].color}"><a
+                                href="<c:url value='/subjects/show?id=${subject_array[6][0].id}'/>">
+                                    <p>${subject_array[6][0].name}</p>
+                                    <p>${subject_array[6][0].teacher.name}</p>
+                            </a></td>
+                        </tr>
+                        <tr>
+                            <th>7限</th>
+                            <td class="${subject_array[7][0].color}"><a
+                                href="<c:url value='/subjects/show?id=${subject_array[7][0].id}'/>">
+                                    <p>${subject_array[7][0].name}</p>
+                                    <p>${subject_array[7][0].teacher.name}</p>
+                            </a></td>
+                        </tr>
+                        <tr>
+                            <th>8限</th>
+                            <td class="${subject_array[8][0].color}"><a
+                                href="<c:url value='subjects/show?id=${subject_array[8][0].id}'/>">
+                                    <p>${subject_array[8][0].name}</p>
+                                    <p>${subject_array[8][0].teacher.name}</p>
+                            </a></td>
+                        </tr>
+                    </table>
+                </li>
+                <li>
+                    <h3>火曜日</h3>
+                    <table class="table table-bordered md-timetable">
+                        <tr>
+                            <th>1限</th>
+                            <td class="${subject_array[1][1].color}"><a
+                                href="<c:url value='/subjects/show?id=${subject_array[1][1].id}'/>">
+                                    <p>${subject_array[1][1].name}</p>
+                                    <p>${subject_array[1][1].teacher.name}</p>
+                            </a></td>
+                        </tr>
+                        <tr>
+                            <th>2限</th>
+                            <td class="${subject_array[2][1].color}"><a
+                                href="<c:url value='/subjects/show?id=${subject_array[2][1].id}'/>">
+                                    <p>${subject_array[2][1].name}</p>
+                                    <p>${subject_array[2][1].teacher.name}</p>
+                            </a></td>
+                        </tr>
+                        <tr>
+                            <th>3限</th>
+                            <td class="${subject_array[3][1].color}"><a
+                                href="<c:url value='/subjects/show?id=${subject_array[3][1].id}'/>">
+                                    <p>${subject_array[3][1].name}</p>
+                                    <p>${subject_array[3][1].teacher.name}</p>
+                            </a></td>
+                        </tr>
+                        <tr>
+                            <th>4限</th>
+                            <td class="${subject_array[4][1].color}"><a
+                                href="<c:url value='/subjects/show?id=${subject_array[4][1].id}'/>">
+                                    <p>${subject_array[4][1].name}</p>
+                                    <p>${subject_array[4][1].teacher.name}</p>
+                            </a></td>
+                        </tr>
+                        <tr>
+                            <th>5限</th>
+                            <td class="${subject_array[5][1].color}"><a
+                                href="<c:url value='/subjects/show?id=${subject_array[5][1].id}'/>">
+                                    <p>${subject_array[5][1].name}</p>
+                                    <p>${subject_array[5][1].teacher.name}</p>
+                            </a></td>
+                        </tr>
+                        <tr>
+                            <th>6限</th>
+                            <td class="${subject_array[6][1].color}"><a
+                                href="<c:url value='/subjects/show?id=${subject_array[6][1].id}'/>">
+                                    <p>${subject_array[6][1].name}</p>
+                                    <p>${subject_array[6][1].teacher.name}</p>
+                            </a></td>
+                        </tr>
+                        <tr>
+                            <th>7限</th>
+                            <td class="${subject_array[7][1].color}"><a
+                                href="<c:url value='/subjects/show?id=${subject_array[7][1].id}'/>">
+                                    <p>${subject_array[7][1].name}</p>
+                                    <p>${subject_array[7][1].teacher.name}</p>
+                            </a></td>
+                        </tr>
+                        <tr>
+                            <th>8限</th>
+                            <td class="${subject_array[8][1].color}"><a
+                                href="<c:url value='subjects/show?id=${subject_array[8][1].id}'/>">
+                                    <p>${subject_array[8][1].name}</p>
+                                    <p>${subject_array[8][1].teacher.name}</p>
+                            </a></td>
+                        </tr>
+                    </table>
+                </li>
+                <li>
+                    <h3>水曜日</h3>
+                    <table class="table table-bordered md-timetable">
+                        <tr>
+                            <th>1限</th>
+                            <td class="${subject_array[1][2].color}"><a
+                                href="<c:url value='/subjects/show?id=${subject_array[1][2].id}'/>">
+                                    <p>${subject_array[1][2].name}</p>
+                                    <p>${subject_array[1][2].teacher.name}</p>
+                            </a></td>
+                        </tr>
+                        <tr>
+                            <th>2限</th>
+                            <td class="${subject_array[2][2].color}"><a
+                                href="<c:url value='/subjects/show?id=${subject_array[2][2].id}'/>">
+                                    <p>${subject_array[2][2].name}</p>
+                                    <p>${subject_array[2][2].teacher.name}</p>
+                            </a></td>
+                        </tr>
+                        <tr>
+                            <th>3限</th>
+                            <td class="${subject_array[3][2].color}"><a
+                                href="<c:url value='/subjects/show?id=${subject_array[3][2].id}'/>">
+                                    <p>${subject_array[3][2].name}</p>
+                                    <p>${subject_array[3][2].teacher.name}</p>
+                            </a></td>
+                        </tr>
+                        <tr>
+                            <th>4限</th>
+                            <td class="${subject_array[4][2].color}"><a
+                                href="<c:url value='/subjects/show?id=${subject_array[4][2].id}'/>">
+                                    <p>${subject_array[4][2].name}</p>
+                                    <p>${subject_array[4][2].teacher.name}</p>
+                            </a></td>
+                        </tr>
+                        <tr>
+                            <th>5限</th>
+                            <td class="${subject_array[5][2].color}"><a
+                                href="<c:url value='/subjects/show?id=${subject_array[5][2].id}'/>">
+                                    <p>${subject_array[5][2].name}</p>
+                                    <p>${subject_array[5][2].teacher.name}</p>
+                            </a></td>
+                        </tr>
+                        <tr>
+                            <th>6限</th>
+                            <td class="${subject_array[6][2].color}"><a
+                                href="<c:url value='/subjects/show?id=${subject_array[6][2].id}'/>">
+                                    <p>${subject_array[6][2].name}</p>
+                                    <p>${subject_array[6][2].teacher.name}</p>
+                            </a></td>
+                        </tr>
+                        <tr>
+                            <th>7限</th>
+                            <td class="${subject_array[7][2].color}"><a
+                                href="<c:url value='/subjects/show?id=${subject_array[7][2].id}'/>">
+                                    <p>${subject_array[7][2].name}</p>
+                                    <p>${subject_array[7][2].teacher.name}</p>
+                            </a></td>
+                        </tr>
+                        <tr>
+                            <th>8限</th>
+                            <td class="${subject_array[8][2].color}"><a
+                                href="<c:url value='subjects/show?id=${subject_array[8][2].id}'/>">
+                                    <p>${subject_array[8][2].name}</p>
+                                    <p>${subject_array[8][2].teacher.name}</p>
+                            </a></td>
+                        </tr>
+                    </table>
+                </li>
+                <li>
+                    <h3>木曜日</h3>
+                    <table class="table table-bordered md-timetable">
+                        <tr>
+                            <th>1限</th>
+                            <td class="${subject_array[1][3].color}"><a
+                                href="<c:url value='/subjects/show?id=${subject_array[1][3].id}'/>">
+                                    <p>${subject_array[1][3].name}</p>
+                                    <p>${subject_array[1][3].teacher.name}</p>
+                            </a></td>
+                        </tr>
+                        <tr>
+                            <th>2限</th>
+                            <td class="${subject_array[2][3].color}"><a
+                                href="<c:url value='/subjects/show?id=${subject_array[2][3].id}'/>">
+                                    <p>${subject_array[2][3].name}</p>
+                                    <p>${subject_array[2][3].teacher.name}</p>
+                            </a></td>
+                        </tr>
+                        <tr>
+                            <th>3限</th>
+                            <td class="${subject_array[3][3].color}"><a
+                                href="<c:url value='/subjects/show?id=${subject_array[3][3].id}'/>">
+                                    <p>${subject_array[3][3].name}</p>
+                                    <p>${subject_array[3][3].teacher.name}</p>
+                            </a></td>
+                        </tr>
+                        <tr>
+                            <th>4限</th>
+                            <td class="${subject_array[4][3].color}"><a
+                                href="<c:url value='/subjects/show?id=${subject_array[4][3].id}'/>">
+                                    <p>${subject_array[4][3].name}</p>
+                                    <p>${subject_array[4][3].teacher.name}</p>
+                            </a></td>
+                        </tr>
+                        <tr>
+                            <th>5限</th>
+                            <td class="${subject_array[5][3].color}"><a
+                                href="<c:url value='/subjects/show?id=${subject_array[5][3].id}'/>">
+                                    <p>${subject_array[5][3].name}</p>
+                                    <p>${subject_array[5][3].teacher.name}</p>
+                            </a></td>
+                        </tr>
+                        <tr>
+                            <th>6限</th>
+                            <td class="${subject_array[6][3].color}"><a
+                                href="<c:url value='/subjects/show?id=${subject_array[6][3].id}'/>">
+                                    <p>${subject_array[6][3].name}</p>
+                                    <p>${subject_array[6][3].teacher.name}</p>
+                            </a></td>
+                        </tr>
+                        <tr>
+                            <th>7限</th>
+                            <td class="${subject_array[7][3].color}"><a
+                                href="<c:url value='/subjects/show?id=${subject_array[7][3].id}'/>">
+                                    <p>${subject_array[7][3].name}</p>
+                                    <p>${subject_array[7][3].teacher.name}</p>
+                            </a></td>
+                        </tr>
+                        <tr>
+                            <th>8限</th>
+                            <td class="${subject_array[8][3].color}"><a
+                                href="<c:url value='subjects/show?id=${subject_array[8][3].id}'/>">
+                                    <p>${subject_array[8][3].name}</p>
+                                    <p>${subject_array[8][3].teacher.name}</p>
+                            </a></td>
+                        </tr>
+                    </table>
+                </li>
+                <li>
+                    <h3>金曜日</h3>
+                    <table class="table table-bordered md-timetable">
+                        <tr>
+                            <th>1限</th>
+                            <td class="${subject_array[1][4].color}"><a
+                                href="<c:url value='/subjects/show?id=${subject_array[1][4].id}'/>">
+                                    <p>${subject_array[1][4].name}</p>
+                                    <p>${subject_array[1][4].teacher.name}</p>
+                            </a></td>
+                        </tr>
+                        <tr>
+                            <th>2限</th>
+                            <td class="${subject_array[2][4].color}"><a
+                                href="<c:url value='/subjects/show?id=${subject_array[2][4].id}'/>">
+                                    <p>${subject_array[2][4].name}</p>
+                                    <p>${subject_array[2][4].teacher.name}</p>
+                            </a></td>
+                        </tr>
+                        <tr>
+                            <th>3限</th>
+                            <td class="${subject_array[3][4].color}"><a
+                                href="<c:url value='/subjects/show?id=${subject_array[3][4].id}'/>">
+                                    <p>${subject_array[3][4].name}</p>
+                                    <p>${subject_array[3][4].teacher.name}</p>
+                            </a></td>
+                        </tr>
+                        <tr>
+                            <th>4限</th>
+                            <td class="${subject_array[4][4].color}"><a
+                                href="<c:url value='/subjects/show?id=${subject_array[4][4].id}'/>">
+                                    <p>${subject_array[4][4].name}</p>
+                                    <p>${subject_array[4][4].teacher.name}</p>
+                            </a></td>
+                        </tr>
+                        <tr>
+                            <th>5限</th>
+                            <td class="${subject_array[5][4].color}"><a
+                                href="<c:url value='/subjects/show?id=${subject_array[5][4].id}'/>">
+                                    <p>${subject_array[5][4].name}</p>
+                                    <p>${subject_array[5][4].teacher.name}</p>
+                            </a></td>
+                        </tr>
+                        <tr>
+                            <th>6限</th>
+                            <td class="${subject_array[6][4].color}"><a
+                                href="<c:url value='/subjects/show?id=${subject_array[6][4].id}'/>">
+                                    <p>${subject_array[6][4].name}</p>
+                                    <p>${subject_array[6][4].teacher.name}</p>
+                            </a></td>
+                        </tr>
+                        <tr>
+                            <th>7限</th>
+                            <td class="${subject_array[7][4].color}"><a
+                                href="<c:url value='/subjects/show?id=${subject_array[7][4].id}'/>">
+                                    <p>${subject_array[7][4].name}</p>
+                                    <p>${subject_array[7][4].teacher.name}</p>
+                            </a></td>
+                        </tr>
+                        <tr>
+                            <th>8限</th>
+                            <td class="${subject_array[8][4].color}"><a
+                                href="<c:url value='subjects/show?id=${subject_array[8][4].id}'/>">
+                                    <p>${subject_array[8][4].name}</p>
+                                    <p>${subject_array[8][4].teacher.name}</p>
+                            </a></td>
+                        </tr>
+                    </table>
+                </li>
+                <li>
+                    <h3>土曜日</h3>
+                    <table class="table table-bordered md-timetable">
+                        <tr>
+                            <th>1限</th>
+                            <td class="${subject_array[1][5].color}"><a
+                                href="<c:url value='/subjects/show?id=${subject_array[1][5].id}'/>">
+                                    <p>${subject_array[1][5].name}</p>
+                                    <p>${subject_array[1][5].teacher.name}</p>
+                            </a></td>
+                        </tr>
+                        <tr>
+                            <th>2限</th>
+                            <td class="${subject_array[2][5].color}"><a
+                                href="<c:url value='/subjects/show?id=${subject_array[2][5].id}'/>">
+                                    <p>${subject_array[2][5].name}</p>
+                                    <p>${subject_array[2][5].teacher.name}</p>
+                            </a></td>
+                        </tr>
+                        <tr>
+                            <th>3限</th>
+                            <td class="${subject_array[3][5].color}"><a
+                                href="<c:url value='/subjects/show?id=${subject_array[3][5].id}'/>">
+                                    <p>${subject_array[3][5].name}</p>
+                                    <p>${subject_array[3][5].teacher.name}</p>
+                            </a></td>
+                        </tr>
+                        <tr>
+                            <th>4限</th>
+                            <td class="${subject_array[4][5].color}"><a
+                                href="<c:url value='/subjects/show?id=${subject_array[4][5].id}'/>">
+                                    <p>${subject_array[4][5].name}</p>
+                                    <p>${subject_array[4][5].teacher.name}</p>
+                            </a></td>
+                        </tr>
+                        <tr>
+                            <th>5限</th>
+                            <td class="${subject_array[5][5].color}"><a
+                                href="<c:url value='/subjects/show?id=${subject_array[5][5].id}'/>">
+                                    <p>${subject_array[5][5].name}</p>
+                                    <p>${subject_array[5][5].teacher.name}</p>
+                            </a></td>
+                        </tr>
+                        <tr>
+                            <th>6限</th>
+                            <td class="${subject_array[6][5].color}"><a
+                                href="<c:url value='/subjects/show?id=${subject_array[6][5].id}'/>">
+                                    <p>${subject_array[6][5].name}</p>
+                                    <p>${subject_array[6][5].teacher.name}</p>
+                            </a></td>
+                        </tr>
+                        <tr>
+                            <th>7限</th>
+                            <td class="${subject_array[7][5].color}"><a
+                                href="<c:url value='/subjects/show?id=${subject_array[7][5].id}'/>">
+                                    <p>${subject_array[7][5].name}</p>
+                                    <p>${subject_array[7][5].teacher.name}</p>
+                            </a></td>
+                        </tr>
+                        <tr>
+                            <th>8限</th>
+                            <td class="${subject_array[8][5].color}"><a
+                                href="<c:url value='subjects/show?id=${subject_array[8][5].id}'/>">
+                                    <p>${subject_array[8][5].name}</p>
+                                    <p>${subject_array[8][5].teacher.name}</p>
+                            </a></td>
+                        </tr>
+                    </table>
+                </li>
+            </ul>
+            <a href="#" class="carousel-control carousel-control-prev">&lt;</a> <a
+                href="#" class="carousel-control carousel-control-next">&gt;</a>
+        </div>
+
+        <!-- desctop -->
         <table class="table table-bordered timetable">
             <thead>
                 <tr>

@@ -15,40 +15,40 @@
                             <div class="data-wrapper">
                                 <h3>Student data</h3>
                                 <div class="data-contents row">
-                                    <div class="data col-md-5">
+                                    <div class="data col-5">
                                         <p>生徒名：</p>
                                     </div>
-                                    <div class="data col-md-6">
+                                    <div class="data col-6">
                                         <c:out value="${person.name}" />
                                     </div>
-                                    <div class="data col-md-5">
+                                    <div class="data col-5">
                                         <p>個人コード：</p>
                                     </div>
-                                    <div class="data col-md-6">
+                                    <div class="data col-6">
                                         <c:out value="${person.code}" />
                                     </div>
-                                    <div class="data col-md-5">
+                                    <div class="data col-5">
                                         <p>大学名：</p>
                                     </div>
-                                    <div class="data col-md-6">
+                                    <div class="data col-6">
                                         <c:out value="${person.college.name}" />
                                     </div>
-                                    <div class="data col-md-5">
+                                    <div class="data col-5">
                                         <p>学部名：</p>
                                     </div>
-                                    <div class="data col-md-6">
+                                    <div class="data col-6">
                                         <c:out value="${person.college.undergraduate_name}" />
                                     </div>
-                                    <div class="data col-md-5">
+                                    <div class="data col-5">
                                         <p>学科名：</p>
                                     </div>
-                                    <div class="data col-md-6">
+                                    <div class="data col-6">
                                         <c:out value="${person.college.department_name}" />
                                     </div>
-                                    <div class="data col-md-5">
+                                    <div class="data col-5">
                                         <p>大学コード：</p>
                                     </div>
-                                    <div class="data col-md-6">
+                                    <div class="data col-6">
                                         <c:out value="${person.college.code}" />
                                     </div>
                                 </div>

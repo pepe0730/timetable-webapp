@@ -4,7 +4,8 @@ body {
     background-color: #f6f9fc;
     color: #3f4b57;
     /*font-family: "Hiragino Kaku Gothic Pro",Meiryo,"MS PGothic",Helvetica,Arial,sans-serif;*/
-    font-family: Nunito,-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Arial,sans-serif;
+    font-family: Nunito, -apple-system, BlinkMacSystemFont, Segoe UI,
+        Helvetica Neue, Arial, sans-serif;
 }
 
 a {
@@ -16,8 +17,10 @@ a:hover {
     text-decoration: none;
     color: #3f4b57;
 }
+
 a:action {
     text-decoration: none;
+    color: #3f4b57;
 }
 
 .heading-wrapper {
@@ -34,6 +37,7 @@ h2 {
     padding-left: 20px;
     letter-spacing: 2px;
 }
+
 h2 i {
     margin-right: 10px;
     color: red;
@@ -43,7 +47,7 @@ h2 i {
     background-color: white;
     width: 200px;
     height: 100px;
-    box-shadow: 0 0 2rem 0 rgba(53,64,82,.1);
+    box-shadow: 0 0 2rem 0 rgba(53, 64, 82, .1);
     border-radius: 10px;
 }
 
@@ -62,7 +66,7 @@ h2 i {
 
 header {
     background-color: white;
-    box-shadow: 0 0 2rem 0 rgba(53,64,82,.1);
+    box-shadow: 0 0 2rem 0 rgba(53, 64, 82, .1);
     width: 100%;
     height: 70px;
     border-bottom: 1px solid #e4ebf6;
@@ -98,7 +102,7 @@ header .header-right a {
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
-    transition: all  0.5s ease;
+    transition: all 0.5s ease;
 }
 
 header .header-right a:hover {
@@ -145,7 +149,7 @@ header .header-right a:hover {
     height: 50vh;
     overflow: scroll;
     margin: 0 auto;
-    box-shadow: 0 0 2rem 0 rgba(53,64,82,.1);
+    box-shadow: 0 0 2rem 0 rgba(53, 64, 82, .1);
 }
 
 .table-wrapper h3 {
@@ -168,7 +172,7 @@ header .header-right a:hover {
     width: 80%;
     margin: 50px auto;
     border-radius: 10px;
-    box-shadow: 0 0 2rem 0 rgba(53,64,82,.1);
+    box-shadow: 0 0 2rem 0 rgba(53, 64, 82, .1);
 }
 
 .text-form h3 {
@@ -187,9 +191,9 @@ form .btn {
 
 #flush_error {
     background-color: white;
-    border: 1px solid rgba(255,20,147,.3);
+    border: 1px solid rgba(255, 20, 147, .3);
     border-radius: 10px;
-    box-shadow: 0 0 2rem 0 rgba(53,64,82,.1);
+    box-shadow: 0 0 2rem 0 rgba(53, 64, 82, .1);
     width: 80%;
     margin: 30px auto;
     padding: 30px 0;
@@ -199,9 +203,9 @@ form .btn {
 
 #flush_success {
     background-color: white;
-    border: 1px solid rgba(26,214,139,0.7);
+    border: 1px solid rgba(26, 214, 139, 0.7);
     border-radius: 10px;
-    box-shadow: 0 0 2rem 0 rgba(53,64,82,.1);
+    box-shadow: 0 0 2rem 0 rgba(53, 64, 82, .1);
     width: 80%;
     margin: 30px auto;
     padding: 30px 0;
@@ -212,21 +216,24 @@ form .btn {
 /* ---------------------------- */
 /* --- Flush Animation --- */
 /* ---------------------------- */
-@keyframes fadeIn{
-    0%{
-        opacity: 0;
-    }
-    100%{
-        opacity: 1;
-    }
+@
+keyframes fadeIn { 0%{
+    opacity: 0;
 }
 
+100%{
+opacity
+:
+
+1;
+}
+}
 #flush_error .error-content {
     width: 90%;
     margin: 0 auto;
 }
 
-#flush_error .error-content h3{
+#flush_error .error-content h3 {
     margin-bottom: 20px;
 }
 
@@ -239,18 +246,19 @@ form .btn {
     width: 90%;
     margin: 0 auto;
 }
-#flush_success .success-content h3{
+
+#flush_success .success-content h3 {
     margin-bottom: 20px;
 }
-#flush_success .success-content p{
+
+#flush_success .success-content p {
     margin-left: 40px;
 }
-
 
 .new-btn-wrapper {
     margin: 40px auto;
     background-color: white;
-    box-shadow: 0 0 2rem 0 rgba(53,64,82,.1);
+    box-shadow: 0 0 2rem 0 rgba(53, 64, 82, .1);
     padding: 20px;
     width: 260px;
     border-radius: 10px;
@@ -268,7 +276,6 @@ form .btn {
 /*================
   person show.jsp
 =================*/
-
 .show-wrapper {
     display: flex;
     justify-content: space-between;
@@ -279,7 +286,7 @@ form .btn {
 .data-wrapper {
     background-color: white;
     border-radius: 10px;
-    box-shadow: 0 0 2rem 0 rgba(53,64,82,.1);
+    box-shadow: 0 0 2rem 0 rgba(53, 64, 82, .1);
     width: 500px;
     padding: 25px 0 50px 0;
 }
@@ -301,7 +308,7 @@ form .btn {
     width: 30%;
     padding: 50px 30px;
     border-radius: 10px;
-    box-shadow: 0 0 2rem 0 rgba(53,64,82,.1);
+    box-shadow: 0 0 2rem 0 rgba(53, 64, 82, .1);
 }
 
 .show-btn-wrapper form {
@@ -326,7 +333,7 @@ form .btn {
 
 .show-date-wrapper {
     display: flex;
-    margin: 100px ;
+    margin: 100px;
     width: 80%;
     margin: 60px auto;
 }
@@ -334,7 +341,7 @@ form .btn {
 .date-data {
     background-color: white;
     border-radius: 10px;
-    box-shadow: 0 0 2rem 0 rgba(53,64,82,.1);
+    box-shadow: 0 0 2rem 0 rgba(53, 64, 82, .1);
     margin-right: 50px;
     width: 250px;
     height: 200px;
@@ -367,7 +374,6 @@ footer {
 /*================
     login.jsp
 ================*/
-
 .login {
     height: 100%;
 }
@@ -383,7 +389,7 @@ footer {
     border-radius: 50%;
     width: 100px;
     height: 100px;
-    box-shadow: 0 0 2rem 0 rgba(53,64,82,.1);
+    box-shadow: 0 0 2rem 0 rgba(53, 64, 82, .1);
     margin: 50px auto;
     position: relative;
 }
@@ -401,7 +407,7 @@ footer {
     width: 80%;
     margin: 50px auto;
     border-radius: 10px;
-    box-shadow: 0 0 2rem 0 rgba(53,64,82,.1);
+    box-shadow: 0 0 2rem 0 rgba(53, 64, 82, .1);
 }
 
 .login-form h2 {
@@ -413,24 +419,22 @@ footer {
     margin: 50px auto;
 }
 
-
 .login-form .input-area input {
     width: 100%;
     border-top: none;
     border-left: none;
     border-right: none;
-    border-bottom: 1px solid rgba(53,64,82,.1);
+    border-bottom: 1px solid rgba(53, 64, 82, .1);
     transition: all 0.4s;
 }
-
 
 .login-form .input-area input:focus {
     outline: none;
     border-top: none;
     border-left: none;
     border-right: none;
-    border-bottom: 1px solid rgba(53,64,82,.5);
-    box-shadow: 0 1rem 4rem 0 rgba(53,64,82,.1);
+    border-bottom: 1px solid rgba(53, 64, 82, .5);
+    box-shadow: 0 1rem 4rem 0 rgba(53, 64, 82, .1);
 }
 
 .login-form .input-area p {
@@ -439,7 +443,7 @@ footer {
 }
 
 .login-form button {
-    background-color: rgba(0,204,106,.8);
+    background-color: rgba(0, 204, 106, .8);
     width: 100px;
     color: white;
     margin-bottom: 30px;
@@ -447,27 +451,26 @@ footer {
 }
 
 .login-form button:hover {
-    color :white;
-    background-color: rgba(0,204,106,1);
-    box-shadow: 0 1rem 2rem 0 rgba(53,64,82,.1);
+    color: white;
+    background-color: rgba(0, 204, 106, 1);
+    box-shadow: 0 1rem 2rem 0 rgba(53, 64, 82, .1);
 }
 
 /*==============
  person profile
  ==============*/
- .show-btn-wrapper .profile-btn {
-     margin: 60px auto;
+.show-btn-wrapper .profile-btn {
+    margin: 60px auto;
 }
 
 /*===============
  timetable layout
  ===============*/
-
- .date-box {
+.date-box {
     background-color: white;
     width: 200px;
     height: 100px;
-    box-shadow: 0 0 2rem 0 rgba(53,64,82,.1);
+    box-shadow: 0 0 2rem 0 rgba(53, 64, 82, .1);
     border-radius: 10px;
 }
 
@@ -475,7 +478,7 @@ footer {
     margin: 20px 20px 10px 20px;
 }
 
-.date-box p{
+.date-box p {
     margin-left: 80px;
 }
 
@@ -484,9 +487,8 @@ footer {
     margin-right: 10px;
 }
 
- .timetable {
+.timetable {
     background-color: white;
-
 }
 
 .timetable tbody tr {
@@ -499,11 +501,11 @@ footer {
     -webkit-transition: all 0.2s ease;
     -moz-transition: all 0.2s ease;
     -o-transition: all 0.2s ease;
-    transition: all  0.2s ease;
+    transition: all 0.2s ease;
 }
 
 .timetable tbody tr td:hover {
-    box-shadow: 0 1rem 2rem 0 rgba(53,64,82,.1);
+    box-shadow: 0 1rem 2rem 0 rgba(53, 64, 82, .1);
 }
 
 .timetable tbody td a {
@@ -518,30 +520,30 @@ footer {
 
 .timetable tbody tr th {
     width: 50px;
-    background-color:rgba(51,3,0,0.3);
+    background-color: rgba(51, 3, 0, 0.3);
     color: white;
     font-size: 12px;
 }
 
 .timetable thead {
     color: white;
-    background-color:rgba(51,3,0,0.3);
+    background-color: rgba(51, 3, 0, 0.3);
 }
 
 .timetable tbody .red {
-    background-color: rgba(245,49,49,0.3);
-     -webkit-transition: all 0.2s ease;
+    background-color: rgba(245, 49, 49, 0.3);
+    -webkit-transition: all 0.2s ease;
     -moz-transition: all 0.2s ease;
     -o-transition: all 0.2s ease;
     transition: all 0.2s ease;
 }
 
 .timetable tbody .red:hover {
-    background-color: rgba(245,49,49,0.4);
+    background-color: rgba(245, 49, 49, 0.4);
 }
 
 .timetable tbody .blue {
-    background-color: rgba(20,76,245,0.3);
+    background-color: rgba(20, 76, 245, 0.3);
     -webkit-transition: all 0.2s ease;
     -moz-transition: all 0.2s ease;
     -o-transition: all 0.2s ease;
@@ -549,11 +551,11 @@ footer {
 }
 
 .timetable tbody .blue:hover {
-    background-color: rgba(20,76,245,0.4);
+    background-color: rgba(20, 76, 245, 0.4);
 }
 
 .timetable tbody .yellow {
-    background-color: rgba(245,245,42,0.3);
+    background-color: rgba(245, 245, 42, 0.3);
     -webkit-transition: all 0.2s ease;
     -moz-transition: all 0.2s ease;
     -o-transition: all 0.2s ease;
@@ -561,11 +563,11 @@ footer {
 }
 
 .timetable tbody .yellow:hover {
-    background-color: rgba(245,245,42,0.4);
+    background-color: rgba(245, 245, 42, 0.4);
 }
 
 .timetable tbody .green {
-    background-color: rgba(48,176,131,0.3);
+    background-color: rgba(48, 176, 131, 0.3);
     -webkit-transition: all 0.2s ease;
     -moz-transition: all 0.2s ease;
     -o-transition: all 0.2s ease;
@@ -573,11 +575,11 @@ footer {
 }
 
 .timetable tbody .green:hover {
-    background-color: rgba(48,176,131,0.4);
+    background-color: rgba(48, 176, 131, 0.4);
 }
 
 .timetable tbody .yellow_green {
-    background-color: rgba(132,255,66,0.3);
+    background-color: rgba(132, 255, 66, 0.3);
     -webkit-transition: all 0.2s ease;
     -moz-transition: all 0.2s ease;
     -o-transition: all 0.2s ease;
@@ -585,11 +587,11 @@ footer {
 }
 
 .timetable tbody .yellow_green:hover {
-    background-color: rgba(132,255,66,0.4);
+    background-color: rgba(132, 255, 66, 0.4);
 }
 
 .timetable tbody .purple {
-    background-color: rgba(198,66,255,0.3);
+    background-color: rgba(198, 66, 255, 0.3);
     -webkit-transition: all 0.2s ease;
     -moz-transition: all 0.2s ease;
     -o-transition: all 0.2s ease;
@@ -597,11 +599,11 @@ footer {
 }
 
 .timetable tbody .purple:hover {
-    background-color: rgba(198,66,255,0.4);
+    background-color: rgba(198, 66, 255, 0.4);
 }
 
 .timetable tbody .grey {
-    background-color: rgba(199,199,199,0.3);
+    background-color: rgba(199, 199, 199, 0.3);
     -webkit-transition: all 0.2s ease;
     -moz-transition: all 0.2s ease;
     -o-transition: all 0.2s ease;
@@ -609,11 +611,11 @@ footer {
 }
 
 .timetable tbody .grey:hover {
-    background-color: rgba(199,199,199,0.4);
+    background-color: rgba(199, 199, 199, 0.4);
 }
 
 .timetable tbody .brown {
-    background-color: rgba(189,104,19,0.3);
+    background-color: rgba(189, 104, 19, 0.3);
     -webkit-transition: all 0.2s ease;
     -moz-transition: all 0.2s ease;
     -o-transition: all 0.2s ease;
@@ -621,17 +623,16 @@ footer {
 }
 
 .timetable tbody .brown:hover {
-    background-color: rgba(189,104,19,0.4);
+    background-color: rgba(189, 104, 19, 0.4);
 }
 
 /*===============
  subjects show.jsp
  ==============*/
-
- .subject-data-wrapper {
+.subject-data-wrapper {
     background-color: white;
     border-radius: 10px;
-    box-shadow: 0 0 2rem 0 rgba(53,64,82,.1);
+    box-shadow: 0 0 2rem 0 rgba(53, 64, 82, .1);
     width: 40%;
     padding: 25px 0 50px 0;
 }
@@ -648,18 +649,13 @@ footer {
     width: 50%;
     padding: 50px 30px;
     border-radius: 10px;
-    box-shadow: 0 0 2rem 0 rgba(53,64,82,.1);
+    box-shadow: 0 0 2rem 0 rgba(53, 64, 82, .1);
 }
-
-
 
 /*=========================================================
                        Responsive
 =========================================================*/
-
-
 @media screen and (max-width: 765px) {
-
     /*login*/
     header .header-left h1 {
         margin-left: 20px;
@@ -668,7 +664,6 @@ footer {
     .login-form-wrapper span {
         margin: 30px auto;
     }
-
     .login-form-wrapper {
         width: 100%;
         margin: 40px 0;
@@ -702,10 +697,19 @@ footer {
     .count-box h3 {
         font-size: 80%;
     }
-
     .count-box p span {
         font-size: 20px;
         margin-right: 10px;
+    }
+    .date-box {
+        width: 160px;
+        height: 90px;
+    }
+    .date-box p {
+        margin-left: 70px;
+    }
+    .date-box p span {
+        font-size: 20px;
     }
 
     /*templete header&modal */
@@ -738,8 +742,8 @@ footer {
         background-color: white;
         border-radius: 10px;
         position: absolute;
-        top: 120px;
-        left: 60px;
+        top: 20%;;
+        left: 10%;
     }
     .header-modal #close-modal {
         margin-top: 20px;
@@ -762,17 +766,32 @@ footer {
         -webkit-transition: all 0.5s ease;
         -moz-transition: all 0.5s ease;
         -o-transition: all 0.5s ease;
-        transition: all  0.5s ease;
+        transition: all 0.5s ease;
     }
     .header-modal ul li a:hover {
         opacity: 1;
+    }
+
+    /* flush */
+    #flush_error .error-content h3 {
+        font-size: 13px;
+    }
+    #flush_error .error-content p {
+        font-size: 12px;
+        margin-left: 10px;
+    }
+    #flush_success .success-content h3 {
+        font-size: 13px;
+    }
+    #flush_success .success-content p {
+        font-size: 12px;
+        margin-left: 10px;
     }
 
     /* index table */
     .table-wrapper {
         width: calc(100% - 30px);
     }
-
     .table-wrapper h3 {
         margin-left: 30px;
         margin-top: 20px;
@@ -784,16 +803,15 @@ footer {
         padding: .75rem;
         vertical-align: top;
         border-top: 1px solid #dee2e6;
-        font-size: 14px;
+        font-size: 10px;
     }
     .table .btn-info {
-        font-size: 0.7rem;
-        padding: .3rem .6rem;
+        font-size: .1rem;
+        padding: 6px;
     }
     .pagenation {
         margin-left: 20px;
     }
-
     .new-btn-wrapper {
         margin: 40px auto;
         padding: 10px 20px;
@@ -803,9 +821,163 @@ footer {
         width: auto;
     }
 
+    /* md-timetable & carousel */
+    .timetable {
+        display: none; /*bootstrapでの指定では、余白ができる*/
+    }
+    .carousel {
+        position: relative;
+        overflow: hidden;
+        width: 330px;
+        height: 650px;
+        margin: 0 auto;
+    }
+    .carousel-control {
+        display: block;
+        height: 35px;
+        width: 25px;
+        background-color: #f0f0f0;
+        color: #333;
+        line-height: 35px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 1.2rem;
+        opacity: .8;
+    }
+    .carousel-control-prev {
+        position: absolute;
+        left: 0px;
+        top: 300px;
+        text-indent: -2px;
+    }
+    .carousel-control-next {
+        position: absolute;
+        right: 0px;
+        top: 300px;
+        text-indent: 2px;
+    }
+    .tables {
+        width: 99999px;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    .tables li {
+        float: left;
+        width: 330px;
+    }
+    .tables li h3 {
+        text-align: center;
+        font-weight: bold;
+        margin-top: 40px;
+    }
+    .md-timetable {
+        background-color: white;
+    }
+    .md-timetable tr {
+        height: 60px;
+    }
+    .md-timetable tr th {
+        width: 50px;
+        background-color: rgba(51, 3, 0, 0.3);
+    }
+    .md-timetable tr .red {
+        background-color: rgba(245, 49, 49, 0.3);
+    }
+    .md-timetable tr .blue {
+        background-color: rgba(20, 76, 245, 0.3);
+    }
+    .md-timetable tr .yellow {
+        background-color: rgba(245, 245, 42, 0.3);
+    }
+    .md-timetable tr .green {
+        background-color: rgba(48, 176, 131, 0.3);
+    }
+    .md-timetable tr .yellow_green {
+        background-color: rgba(132, 255, 66, 0.3);
+    }
+    .md-timetable tr .purple {
+        background-color: rgba(198, 66, 255, 0.3);
+    }
+    .md-timetable tr .grey {
+        background-color: rgba(199, 199, 199, 0.3);
+    }
+    .md-timetable tr .brown {
+        background-color: rgba(189, 104, 19, 0.3);
+    }
 
+    /* subject takesubject show*/
+    .show-wrapper {
+        display: block;
+        width: 300px;
+        margin-bottom: 30px;
+    }
+    .data-wrapper {
+        width: auto;
+        padding: 25px 0 25px 0;
+        margin-bottom: 30px;
+    }
+    .data-wrapper h3 {
+        font-weight: bold;
+        text-align: center;
+        margin: 0;
+        margin-bottom: 20px;
+    }
+    .data {
+        font-size: 10px;
+    }
+    .show-btn-wrapper {
+        width: auto;
+        padding: 20px;
+    }
+    .subject-data-wrapper {
+        width: auto;
+        margin-bottom: 30px;
+    }
+    .subject-data-wrapper h3 {
+        text-align: center;
+        font-size: 15px;
+        margin: 0;
+        margin-bottom: 30px;
+    }
+    .data-contents {
+        width: 90%;
+    }
+    .subject-description {
+        width: auto;
+        padding: 20px 30px;
+    }
+    .subject-description h3 {
+        text-align: center;
+    }
+    .subject-description p {
+        margin-top: 1rem!important;
+        margin-left: 0!important;
+        margin-bottom: 20px;
+    }
+    .show-date-wrapper {
+        display: block;
+        margin: 100px;
+        width: 80%;
+        margin: 30px auto;
+    }
+    .date-data {
+        margin: 0 auto 30px auto;
+        width: auto;
+    }
 
-
-
+    /* form */
+    .text-form {
+        padding: 40px 10px;
+        width: calc(100% - 30px);
+        margin: 50px auto;
+    }
+    .text-form h3 {
+        text-align: center;
+        margin-left: 0;
+    }
+    select {
+        width: auto!important;
+    }
 
 }

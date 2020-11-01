@@ -15,47 +15,47 @@
                             <div class="data-wrapper">
                                 <h3>class data</h3>
                                 <div class="data-contents row">
-                                    <div class="data col-md-5">
+                                    <div class="data col-5">
                                         <p>講義名：</p>
                                     </div>
-                                    <div class="data col-md-6">
+                                    <div class="data col-6">
                                         <c:out value="${subject.name}" />
                                     </div>
-                                    <div class="data col-md-5">
+                                    <div class="data col-5">
                                         <p>講義コード：</p>
                                     </div>
 
-                                    <div class="data col-md-6">
+                                    <div class="data col-6">
                                         <c:out value="${subject.code}" />
                                     </div>
-                                    <div class="data col-md-5">
+                                    <div class="data col-5">
                                         <p> 担当教授：</p>
                                     </div>
-                                    <div class="data col-md-6">
+                                    <div class="data col-6">
                                         <c:out value="${subject.teacher.name}" />
                                     </div>
-                                    <div class="data col-md-5">
+                                    <div class="data col-5">
                                         <p>大学名：</p>
                                     </div>
-                                    <div class="data col-md-6">
+                                    <div class="data col-6">
                                         <c:out value="${subject.college.name}" />
                                     </div>
-                                    <div class="data col-md-5">
+                                    <div class="data col-5">
                                         <p>学部名：</p>
                                     </div>
-                                    <div class="data col-md-6">
+                                    <div class="data col-6">
                                         <c:out value="${subject.college.undergraduate_name}" />
                                     </div>
-                                    <div class="data col-md-5">
+                                    <div class="data col-5">
                                         <p>学科名：</p>
                                     </div>
-                                    <div class="data col-md-6">
+                                    <div class="data col-6">
                                         <c:out value="${subject.college.department_name}" />
                                     </div>
-                                    <div class="data col-md-5">
+                                    <div class="data col-5">
                                         <p>大学コード：</p>
                                     </div>
-                                    <div class="data col-md-6">
+                                    <div class="data col-6">
                                         <c:out value="${subject.college.code}" />
                                     </div>
                                 </div>
@@ -73,10 +73,10 @@
                             <div class="subject-data-wrapper">
                                 <h3>Time table</h3>
                                 <div class="data-contents row">
-                                    <div class="data col-md-5">
+                                    <div class="data col-5">
                                         <p>開講曜日：</p>
                                     </div>
-                                    <div class="data col-md-6">
+                                    <div class="data col-6">
                                         <c:choose>
                                             <c:when test="${subject.day_of_week == 'monday'}">
                                                 <p>月曜日</p>
@@ -98,22 +98,22 @@
                                             </c:when>
                                         </c:choose>
                                     </div>
-                                    <div class="data col-md-5">
+                                    <div class="data col-5">
                                         <p>開催時限：</p>
                                     </div>
-                                    <div class="data col-md-6">
+                                    <div class="data col-6">
                                         <p><c:out value="${subject.time}" />限</p>
                                     </div>
-                                    <div class="data col-md-5">
+                                    <div class="data col-5">
                                         <p>色:<br/>(時間割)</p>
                                     </div>
-                                    <div class="data col-md-6">
+                                    <div class="data col-6">
                                         <c:out value="${subject.color}" />
                                     </div>
-                                    <div class="data col-md-5">
+                                    <div class="data col-5">
                                         <p>対象生徒</p>
                                     </div>
-                                    <div class="data col-md-6">
+                                    <div class="data col-6">
                                         <c:choose>
                                             <c:when test="${subject.open_flag == 2}">
                                                 <p>全生徒</p>
