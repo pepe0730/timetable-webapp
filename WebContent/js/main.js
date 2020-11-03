@@ -38,7 +38,7 @@ const showSlide = (index) => {
       {
         left: `${-slideWidth * index}px`,
       },
-      600,
+     600
     );
 };
 
