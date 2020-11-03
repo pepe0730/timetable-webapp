@@ -65,6 +65,7 @@ public class LoginFilter implements Filter {
             } else {
                 if (p != null) {
                     ((HttpServletResponse)response).sendRedirect(context_path + "/");
+                    return;
                 }
 
             }
